@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>VasquezSales</title>
+		<title>Tow Trucks 4 Sale</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -16,7 +16,7 @@
 
 				<!-- Header -->
 					<header id="header">
-						<a href="welcome.blade.php" class="logo">VasquezSales <span>by TheTruckGuys</span></a>
+						<a href="welcome.blade.php" class="logo">Financing available <span>by VasquezSales</span></a>
 						<nav>
 							<ul>
 								<li><a href="#menu">Menu</a></li>
@@ -28,8 +28,8 @@
 					<nav id="menu">
 						<ul class="links">
 							<li><a href="welcome.blade.php">Home</a></li>
-							<li><a href="generic.html">Generic</a></li>
-							<li><a href="elements.html">Elements</a></li>
+							<li><a href="generic.html">Partners</a></li>
+							<li><a href="elements.html">Contact us</a></li>
 						</ul>
 						<ul class="actions vertical">
 							<li><a href="#" class="button special fit">Sign Up</a></li>
@@ -50,11 +50,11 @@
 					<section id="banner" data-video="">
 						<div class="inner">
 							<header>
-								<h1>Vasquez Sales</h1>
+								<h1>Tow Trucks 4 Sale</h1>
 								<p>Freightliner, Kenworth, Mack, Peterbuilt, Volvo, Hino, International</p>
 							</header>
 							<ul class="actions">
-								<li><a href="#" class="button special big">Get Started</a></li>
+								<li><a href="#" class="button special big">Register</a></li>
 							</ul>
 						</div>
 						<a href="#one" class="more">Learn More</a>
@@ -68,15 +68,18 @@
 								<div class="inner spotlight style1">
 									<div class="content">
 										<header>
-											<h2>Sed Consequat</h2>
+											<h2>Performance and accessories</h2>
 										</header>
-										<p>Ipsum efficitur nisi ac turpis venenatis varius. Suspendisse sed dictum leo ipsum amet pellentesque fusce ac hendrerit consectetur tempor risus, sed eget semper nunc. eleifend facilisis nisi vitae lorem ipsum dolor consequat lorem ipsum etiam.</p>
+										<p>
+											Make sure your new truck runs strong with dependable parts and the latest accessories.
+											We have experience with CB radios, fifth wheels, hydraulics, compressors and much more.
+										</p>
 									</div>
 									<!--
 										Note: You can replace the image below with a JPEG or PNG. Just make sure it's exactly
 										320x340 or at least the same aspect ratio (16:17).
 									-->
-									<span class="image"><img src="images/pic01.svg" alt="" /></span>
+									<span class="image"><img src="images/performance.png" alt="" /></span>
 								</div>
 							</section>
 
@@ -85,15 +88,20 @@
 								<div class="inner spotlight alt style2">
 									<div class="content">
 										<header>
-											<h2>Nisl Adipiscing</h2>
+											<h2>We provide financing</h2>
 										</header>
-										<p>Ipsum efficitur nisi ac turpis venenatis varius. Suspendisse sed dictum leo ipsum amet pellentesque fusce ac hendrerit consectetur tempor risus, sed eget semper nunc. eleifend facilisis nisi vitae lorem ipsum dolor consequat lorem ipsum etiam.</p>
+										<p>
+											Through a successful partnership with banks and finance companies, we are
+											able to provide a viable solution that will enable you to own your truck.
+											To speak to an agent contact us below and we will provide more information
+											on how you can get started.
+										</p>
 									</div>
 									<!--
 										Note: You can replace the image below with a JPEG or PNG. Just make sure it's exactly
 										320x340 or at least the same aspect ratio (16:17).
 									-->
-									<span class="image"><img src="images/pic02.svg" alt="" /></span>
+									<span class="image"><img src="images/dollar.png" alt="" /></span>
 								</div>
 							</section>
 
@@ -102,15 +110,20 @@
 								<div class="inner spotlight style3">
 									<div class="content">
 										<header>
-											<h2>Varius Tempus</h2>
+											<h2>Service & Repair</h2>
 										</header>
-										<p>Ipsum efficitur nisi ac turpis venenatis varius. Suspendisse sed dictum leo ipsum amet pellentesque fusce ac hendrerit consectetur tempor risus, sed eget semper nunc. eleifend facilisis nisi vitae lorem ipsum dolor consequat lorem ipsum etiam.</p>
+										<p>
+											Stay ahead of the curve by letting us handle maintenance and any required
+											repairs. We have a knowledgeable team that can handle work around engine,
+											transmission and frame. Body services are also available through a network
+											of affiliated vendors.
+										</p>
 									</div>
 									<!--
 										Note: You can replace the image below with a JPEG or PNG. Just make sure it's exactly
 										320x340 or at least the same aspect ratio (16:17).
 									-->
-									<span class="image"><img src="images/pic03.svg" alt="" /></span>
+									<span class="image"><img src="images/repair.png" alt="" /></span>
 								</div>
 							</section>
 
@@ -118,28 +131,43 @@
 							<section id="four" class="main special">
 								<div class="inner">
 									<header>
-										<h2>Tempor Suspendisse</h2>
+										<h2>Many wrong roads but you finally found the right one</h2>
 									</header>
 									<div class="features">
 										<section>
-											<span class="icon major fa-diamond style1"></span>
-											<h3>Magna Veroeros</h3>
-											<p>Consequat turpis venenatis varius lorem sed dictum ipsum amet pellentesque fusce hendrerit consectetur risus, sed eget semper nunc.</p>
+											<span class="icon major fab fa-bluetooth style1"></span>
+											<h3>Equipped for the long haul</h3>
+											<p>
+												With modern technology enabling hands free operations
+												you are free to tackle more work and not get stuck on
+												confusing downtown roads.
+											</p>
 										</section>
 										<section>
-											<span class="icon major fa-laptop style2"></span>
-											<h3>Risus Adipiscing</h3>
-											<p>Consequat turpis venenatis varius lorem sed dictum ipsum amet pellentesque fusce hendrerit consectetur risus, sed eget semper nunc.</p>
+											<span class="icon major fas fa-align-left style2"></span>
+											<h3>IFTA, DOT AUTH and REGISTRATION</h3>
+											<p>
+												We can help you with decals or identification for your truck.
+												We have standard templates to choose from or if you have your
+												own idea we can turn that into a decal.
+											</p>
 										</section>
 										<section>
-											<span class="icon major fa-bar-chart style3"></span>
-											<h3>Leo Ipsum Varius</h3>
-											<p>Consequat turpis venenatis varius lorem sed dictum ipsum amet pellentesque fusce hendrerit consectetur risus, sed eget semper nunc.</p>
+											<span class="icon major fas fa-camera style3"></span>
+											<h3>Let us sell your truck</h3>
+											<p>
+												We can repair it, wash it and then photograph it, ultimately
+												help you get top dollar when your ready to part with your truck.
+											</p>
 										</section>
 										<section>
-											<span class="icon major fa-save style4"></span>
-											<h3>Dolor Consequat</h3>
-											<p>Consequat turpis venenatis varius lorem sed dictum ipsum amet pellentesque fusce hendrerit consectetur risus, sed eget semper nunc.</p>
+											<span class="icon major fas fa-calculator style4"></span>
+											<h3>Were good at math</h3>
+											<p>
+												We can project your expenditures to help you gauge your budget.
+												Many times buyers focus on cutting the cost without realizing how
+												they cut their benefits.
+											</p>
 										</section>
 									</div>
 								</div>
@@ -148,8 +176,10 @@
 						<!-- CTA -->
 							<section id="cta" class="main special">
 								<div class="inner">
-									<p>Sed varius suspendisse dictum leo ipsum amet pellentesque<br />
-									fusce ac hendrerit consectetur tempor lorem ipsum.</p>
+									<p>
+										Life is a journey that must be traveled no matter how rough the road gets.<br>
+										So do it comfortably.
+									</p>
 									<ul class="actions vertical">
 										<li><a href="#" class="button special big">Get Started</a></li>
 										<li><a href="#" class="button big">Learn More</a></li>
@@ -170,7 +200,7 @@
 								<li><a href="#" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
 							</ul>
 						</div>
-						<p class="copyright">&copy; Untitled. All rights reserved.</p>
+						<p class="copyright">&copy; Trucks-4-Sale. All rights reserved.</p>
 					</footer>
 
 			</div>
