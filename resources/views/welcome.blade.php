@@ -54,7 +54,7 @@
 								<p>Freightliner, Kenworth, Mack, Peterbuilt, Volvo, Hino, International</p>
 							</header>
 							<ul class="actions">
-								<li><a href="#" class="button special big">Register</a></li>
+								<li><a href="{{ route('register') }}" class="button special big">Register</a></li>
 							</ul>
 						</div>
 						<a href="#one" class="more">Learn More</a>
