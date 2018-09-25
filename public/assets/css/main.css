@@ -1822,8 +1822,12 @@
 	}
 
 	a:hover {
-		color: #7bd2ed !important;
+		color: #c6e0f5 !important;
 	}
+
+	/*#logoutLink:hover {*/
+		/*color: #8a6d3b;*/
+	/*}*/
 
 	strong, b {
 		color: #777777;
@@ -3158,10 +3162,11 @@
 							width: 1em;
 						}
 
+        /*TOP NAV TEXT*/
 		#header.alt {
 			background-color: transparent;
 			border-bottom-color: transparent;
-			color: #ffffff;
+			color: ivory;
 		}
 
 			#header.alt nav ul li a[href="#menu"]:before {
@@ -3210,6 +3215,7 @@
 
 /* Menu */
 
+/*INSIDE THE SIDEMENU*/
 	#menu {
 		-moz-transform: translateX(20em);
 		-webkit-transform: translateX(20em);
@@ -3220,8 +3226,8 @@
 		-ms-transition: -ms-transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
 		transition: transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
 		-webkit-overflow-scrolling: touch;
-		background: #ffffff;
-		color: #777777;
+		background: #aaaaaa;
+		color: #0f0f0f;
 		height: 100%;
 		max-width: 80%;
 		overflow-y: auto;
@@ -3233,6 +3239,7 @@
 		width: 20em;
 		z-index: 10002;
 	}
+
 
 		#menu > ul {
 			margin: 0 0 1em 0;
@@ -3247,9 +3254,10 @@
 					padding: 0;
 				}
 
+                /*LINK LINES*/
 					#menu > ul.links > li > a:not(.button) {
 						border: 0;
-						border-top: solid 1px #eaeaea;
+						border-top: solid 1px #0f0f0f;
 						color: inherit;
 						display: block;
 						font-size: 0.8em;
@@ -3269,12 +3277,12 @@
 					}
 
 		#menu .close {
-			-webkit-tap-highlight-color: transparent;
+			-webkit-tap-highlight-color: #0f0f0f;
 			background-image: url("../images/close.svg");
 			background-position: 75% 50%;
 			background-repeat: no-repeat;
 			border: 0;
-			color: rgba(255, 255, 255, 0.5);
+			color: rgba(6, 6, 6, 1);
 			cursor: pointer;
 			display: block;
 			height: 3.25em;
@@ -3328,7 +3336,7 @@
 /* Banner */
 
 	#banner {
-		background-color: #333333;
+		background-color: #0f0f0f;
 		color: rgba(255, 255, 255, 0.75);
 		padding: 8em 0 6em 0 ;
 		-moz-align-items: center;
@@ -3411,11 +3419,11 @@
 				}
 
 		#banner input, #banner select, #banner textarea {
-			color: #ffffff;
+			color: #8a6d3b;
 		}
 
 		#banner a:hover {
-			color: #ffffff !important;
+			color: #8a6d3b !important;
 		}
 
 		#banner strong, #banner b {

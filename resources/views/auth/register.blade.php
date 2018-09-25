@@ -9,28 +9,25 @@
 
 		<!-- Page Wrapper -->
 			<div id="page-wrapper">
-
+				<form role="form" action="{{ route('register') }}" method="post" class="registration-form">
 				<div class="container">
 					<div class="row">
 						<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-							<!--PLACEHOLDER-->
+
 						</div>
 
 						<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
 							<div class="form-box">
 								<div class="form-top">
 									<div class="form-top-left">
-										<h3>Sign Up</h3>
+										<h1 class="align-right">Sign Up</h1>
 										<p><!--PLACEHOLDER--></p>
 									</div>
-									<div class="form-top-right">
-										<i class="fa fa-pencil"></i>
-									</div>
+									{{--<div class="align-right">--}}
+										{{--<i class="fa fa-pencil"></i><br><br>--}}
+									{{--</div>--}}
 								</div>
 								<div class="form-bottom">
-
-
-									<form role="form" action="{{ route('register') }}" method="post" class="registration-form">
 										{{ csrf_field() }}
 										<div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
 
@@ -64,10 +61,6 @@
 											<input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password..." required>
 										</div>
 
-										<button type="submit" class="btn">Register</button><br><br>
-										<a href="{{route('homePage')}}"><button type="button" class="btn btn-danger">Go Back</button></a>
-									</form>
-
 
 								</div>
 							</div>
@@ -77,7 +70,27 @@
 							<!--PLACEHOLDER-->
 						</div>
 					</div>
+
+					<br><br>
+
+					<div class="row">
+						<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+							<!--PLACEHOLDER-->
+						</div>
+
+						<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 align-center">
+							<button type="submit" class="btn">Register</button><br>
+							<span>
+								<a href="{{route('homePage')}}">Go Back</a>
+							</span>
+						</div>
+
+						<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+							<!--PLACEHOLDER-->
+						</div>
+					</div>
 				</div>
+				</form>
 			</div>
 
 		<!--FOOTER-->

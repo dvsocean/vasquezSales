@@ -1,41 +1,20 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>Tow Trucks 4 Sale</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="{{asset('assets/css/main.css')}}" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-	</head>
+	<!--HEADER-->
+	@include('includes.global_header.header')
+	<!--HEADER-->
+
 	<body>
 
 		<!-- Page Wrapper -->
 			<div id="page-wrapper">
 
 				<!-- Header -->
-					<header id="header">
-						<a href="welcome.blade.php" class="logo">Financing available <span>by VasquezSales</span></a>
-						<nav>
-							<ul>
-								<li><a href="#menu">Menu</a></li>
-							</ul>
-						</nav>
-					</header>
 
-				<!-- Menu -->
-					<nav id="menu">
-						<ul class="links">
-							<li><a href="welcome.blade.php">Home</a></li>
-							<li><a href="generic.html">Partners</a></li>
-							<li><a href="elements.html">Contact us</a></li>
-						</ul>
-						<ul class="actions vertical">
-							<li><a href="#" class="button special fit">Sign Up</a></li>
-							<li><a href="#" class="button fit">Log In</a></li>
-						</ul>
-					</nav>
+
+				<!--NAV-->
+				@include('includes.nav_menu.nav')
+				<!--NAV-->
 
 				<!-- Banner -->
 				<!--
@@ -51,18 +30,28 @@
 						<div class="inner">
 							<header>
 								<h1>Tow Trucks 4 Sale</h1>
-								<p>Freightliner, Kenworth, Mack, Peterbuilt, Volvo, Hino, International</p>
+								@if(Auth::check())
+									<h2>Welcome {{Auth::user()->name}}</h2>
+									@if(Auth::user()->admin)
+										<ul class="actions vertical">
+											<li><a href="#" class="button big">Control Panel</a></li>
+										</ul>
+									@endif
+								@endif
 							</header>
-							<ul class="actions">
-								<li><a href="{{ route('register') }}" class="button special big">Register</a></li>
-							</ul>
+							@if(!Auth::check())
+								<p>Freightliner, Kenworth, Mack, Peterbuilt, Volvo, Hino, International</p>
+								<ul class="actions vertical">
+									<li><a href="{{route('register')}}" class="button big">Register</a></li>
+									<li><a href="/login" class="button big">Login</a></li>
+								</ul>
+							@endif
 						</div>
 						<a href="#one" class="more">Learn More</a>
 					</section>
 
 				<!-- Wrapper -->
 					<div id="wrapper">
-
 						<!-- One -->
 							<section id="one" class="main">
 								<div class="inner spotlight style1">
@@ -189,30 +178,9 @@
 
 					</div>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<ul class="icons">
-								<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon alt fa-youtube"><span class="label">YouTube</span></a></li>
-								<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
-							</ul>
-						</div>
-						<p class="copyright">&copy; Trucks-4-Sale. All rights reserved.</p>
-					</footer>
-
+				<!--FOOTER-->
+				@include('includes.global_footer.footer')
+				<!--FOOTER-->
 			</div>
-
-		<!-- Scripts -->
-			<script src="{{asset('assets/js/jquery.min.js')}}"></script>
-			<script src="{{asset('assets/js/jquery.scrolly.min.js')}}"></script>
-			<script src="{{asset('assets/js/jquery.scrollex.min.js')}}"></script>
-			<script src="{{asset('assets/js/skel.min.js')}}"></script>
-			<script src="{{asset('assets/js/util.js')}}"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="{{asset('assets/js/main.js')}}"></script>
-
 	</body>
 </html>

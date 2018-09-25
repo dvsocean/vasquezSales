@@ -1,71 +1,83 @@
-@extends('layouts.app')
+<!--
+/**
+ * Created by PhpStorm.
+ * User: danielocean
+ * Date: 9/24/18
+ * Time: 8:17 PM
+ */
+-->
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
+<head>
+    <title>Login</title>
+    <!--HEADER-->
+@include('includes.auth_header.header')
+<!--HEADER-->
+</head>
+
+<body>
+<!-- Top content -->
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+    <div class="row" align="center">
+        <div class="col-xs-12 col-sm-2 col-md-3 col-lg-3">
+            <!--PLACEHOLDER-->
+        </div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
+        <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6">
+            <div class="form-box">
+                <div class="form-top">
+                    <div class="form-top-left">
+                        <h3>Login</h3>
+                        <p>Enter username and password:</p>
+                    </div>
+                    <div class="form-top-right">
+                        <i class="fa fa-lock"></i>
+                    </div>
+                </div>
+                <div class="form-bottom">
 
-                        <div class="form-group row">
-                            <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
 
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+
+                    <form role="form" action="{{ url('/login') }}" method="post" class="login-form">
+                        {{ csrf_field() }}
+
+                        <div class="form-group ">
+                            <label class="sr-only" for="form-username">Email</label>
+                            <input type="text" name="email" placeholder="Email..." class="danika-control form-control" id="{{ $errors->has('email') ? ' has-error' : '' }}" value="{{ old('email') }}" autofocus>
+                            @if ($errors->has('email'))
+                                <span class="danika_errors">
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
+                            @endif
                         </div>
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                        <div class="form-group ">
+                            <label class="sr-only" for="form-password">Password</label>
+                            <input type="password" id="password" name="password" placeholder="Password..." class="danika-control form-control" id="{{ $errors->has('password') ? ' has-error' : '' }}">
+                            @if ($errors->has('password'))
+                                <span class="danika_errors">
+                                           <strong>{{ $errors->first('password') }}</strong>
+                                       </span>
+                            @endif
                         </div>
 
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{ __('Forgot Your Password?') }}
-                                </a>
-                            </div>
-                        </div>
+                        <button type="submit" class="btn">Sign in</button><br><br>
+                        <a href="{{route('homePage')}}"><button type="button" class="btn btn-danger">Nevermind</button></a>
                     </form>
                 </div>
             </div>
+
+            <div class="col-xs-12 col-sm-2 col-md-3 col-lg-3">
+                <!--PLACEHOLDER-->
+            </div>
         </div>
     </div>
+    <!--FOOTER-->
+@include('includes.auth_footer.footer')
+<!--FOOTER-->
 </div>
-@endsection
+</body>
+
+</html>
