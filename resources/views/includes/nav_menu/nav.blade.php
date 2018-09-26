@@ -7,14 +7,14 @@
  */
 -->
 <header id="header">
-    @if(Auth::check())
+    @if($signedIn)
         <ul style="list-style-type: none">
             <li>
                 <br>
-                <a href="{{ route('logout') }}" id="logoutLink"
+                <a href="{{ route('logout') }}"
                    onclick="event.preventDefault();
                                                    document.getElementById('logout-form').submit();">
-                    ({{ucfirst(Auth::user()->name)}}) Logout
+                    ({{ucfirst($user->name)}}) Logout
                 </a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     {{ csrf_field() }}
@@ -36,18 +36,19 @@
 
 <!-- Sidebar menu -->
 <nav id="menu">
-    @if(Auth::user())
+    @if($signedIn)
         <ul class="links">
+            @if($user->admin)
+                <li>
+                    <a href="#">Administrators</a>
+                </li>
+                <br><br>
+            @endif
             <li>
-                <a href="#">Control Panel</a>
+                <a href="{{route('homePage')}}">Home</a>
             </li>
-        </ul>
-    @endif
-
-    @if(Auth::user())
-        <ul class="links">
             <li>
-                <a href="#">Truck Catalog</a>
+                <a href="{{route('profile')}}">{{$user->name}}'s Profile</a>
             </li>
             <li>
                 <a href="#">Performance</a>
@@ -68,7 +69,7 @@
                 <a href="{{ route('logout') }}"
                    onclick="event.preventDefault();
                                                    document.getElementById('logout-form').submit();">
-                    ({{ucfirst(Auth::user()->name)}}) Logout
+                    ({{ucfirst($user->name)}}) Logout
                 </a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     {{ csrf_field() }}

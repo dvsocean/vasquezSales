@@ -18,7 +18,7 @@
     <script src="{{asset('assets/js/jquery-1.11.1.js')}}"></script>
     <script src="{{asset('assets/bootstrap/js/bootstrap.js')}}"></script>
     <link rel="stylesheet" href="{{asset('assets/bootstrap/css/bootstrap.css')}}"/>
-    <link rel="stylesheet" href="{{asset('assets/css/main.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/profile.css')}}" />
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">

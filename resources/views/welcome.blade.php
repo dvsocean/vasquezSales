@@ -1,5 +1,9 @@
 <!DOCTYPE HTML>
 <html>
+	<?php
+	$signedIn = Auth::check();
+	$user = Auth::user();
+	?>
 	<!--HEADER-->
 	@include('includes.global_header.header')
 	<!--HEADER-->
@@ -8,9 +12,6 @@
 
 		<!-- Page Wrapper -->
 			<div id="page-wrapper">
-
-				<!-- Header -->
-
 
 				<!--NAV-->
 				@include('includes.nav_menu.nav')
@@ -30,16 +31,16 @@
 						<div class="inner">
 							<header>
 								<h1>Tow Trucks 4 Sale</h1>
-								@if(Auth::check())
-									<h2>Welcome {{Auth::user()->name}}</h2>
-									@if(Auth::user()->admin)
+								@if($signedIn)
+									<h2>Welcome {{$user->name}}</h2>
+									@if($user->admin)
 										<ul class="actions vertical">
-											<li><a href="#" class="button big">Control Panel</a></li>
+											<li><a href="#" class="button big">Administrators</a></li>
 										</ul>
 									@endif
 								@endif
 							</header>
-							@if(!Auth::check())
+							@if(!$signedIn)
 								<p>Freightliner, Kenworth, Mack, Peterbuilt, Volvo, Hino, International</p>
 								<ul class="actions vertical">
 									<li><a href="{{route('register')}}" class="button big">Register</a></li>
