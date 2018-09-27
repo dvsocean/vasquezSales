@@ -2187,6 +2187,8 @@
 		color: #777777;
 	}
 
+
+	/*override for update form*/
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],

@@ -31,7 +31,8 @@ $user = Auth::user();
 
 
         <div class="container">
-            <form action="#" method="#">
+            <form action="/updateProfile" method="GET">
+                {{ csrf_field() }}
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <h2 class="text-center">{{$user->name}}'s Profile</h2>
@@ -40,14 +41,6 @@ $user = Auth::user();
 
             <br><br>
 
-                <style>
-                    #form-submit:hover{
-                        color: #4c110f !important;
-                        border-color: #4c110f !important;
-                        box-shadow: 0 0 0 1px #4c110f !important;
-                    }
-                </style>
-
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
                     <!--PLACEHOLDER-->
@@ -55,24 +48,27 @@ $user = Auth::user();
 
                 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
                     <img src="PLACEHOLDERS/avatar.jpg" height="200" width="200" class="img-circle">
+                    <br>
+                    <br>
+                    <input type="file" name="profilePhoto"/>
                 </div>
 
                 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <input type="hidden" value="{{$user->id}}" name="id">
                     <label>Name:</label>
-                    <input type="text" name="name" class="form-control">
+                    <input type="text" name="name" value="{{$user->name}}" class="form-control">
                     <br>
                     <label>Email:</label>
-                    <input type="text" name="email" class="form-control">
+                    <input type="text" name="email" value="{{$user->email}}" class="form-control">
                     <br>
                     <label>Telephone:</label>
-                    <input type="text" name="telephone" class="form-control">
+                    <input type="text" name="telephone" value="{{$user->telephone}}" class="form-control">
                     <br>
                     <input id="form-submit" type="submit" name="submit" value="Update" class="form-control">
-
                 </div>
 
                 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-
+                    <!--PLACEHOLDER-->
                 </div>
             </div>
             </form>
