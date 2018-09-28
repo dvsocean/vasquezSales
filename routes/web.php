@@ -27,6 +27,6 @@ Route::get('/profile', function(){
 })->name('profile');
 
 //update profile
-Route::get('/updateProfile', 'MemberController@update');
+Route::post('/updateProfile', 'MemberController@update');
 
 

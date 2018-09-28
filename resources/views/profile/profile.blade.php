@@ -31,7 +31,7 @@ $user = Auth::user();
 
 
         <div class="container">
-            <form action="/updateProfile" method="GET">
+            <form action="/updateProfile" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -47,7 +47,7 @@ $user = Auth::user();
                 </div>
 
                 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                    <img src="PLACEHOLDERS/avatar.jpg" height="200" width="200" class="img-circle">
+                    <img src="{{$user->photo ? "member_images/". $user->photo->file : 'PLACEHOLDERS/avatar.jpg'}}" height="200" width="200" class="img-circle">
                     <br>
                     <br>
                     <input type="file" name="profilePhoto"/>
