@@ -31,4 +31,8 @@ class User extends Authenticatable
     public function photo(){
         return $this->belongsTo('App\Photo');
     }
+
+    public function equipment(){
+        return $this->belongsTo('App\Desired');
+    }
 }

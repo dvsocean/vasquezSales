@@ -30,3 +30,10 @@ Route::get('/profile', function(){
 Route::post('/updateProfile', 'MemberController@update');
 
 
+//admin page
+Route::get('/admin', function(){
+    return view('admin_page.index');
+})->name('admin');
+
+//Desired
+Route::post('/desired', 'DesiredController@update');

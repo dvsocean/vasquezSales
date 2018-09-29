@@ -5,7 +5,7 @@
 	$user = Auth::user();
 	?>
 	<!--HEADER-->
-	@include('includes.global_header.header')
+	@include('includes.header_footer.header')
 	<!--HEADER-->
 
 	<body>
@@ -35,7 +35,7 @@
 									<h2>Welcome {{$user->name}}</h2>
 									@if($user->admin)
 										<ul class="actions vertical">
-											<li><a href="#" class="button big">Administrators</a></li>
+											<li><a href="{{route('admin')}}" class="button big">Control Panel</a></li>
 										</ul>
 									@endif
 								@endif
@@ -180,7 +180,7 @@
 					</div>
 
 				<!--FOOTER-->
-				@include('includes.global_footer.footer')
+				@include('includes.header_footer.footer')
 				<!--FOOTER-->
 			</div>
 	</body>

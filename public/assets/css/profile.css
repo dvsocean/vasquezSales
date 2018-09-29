@@ -1821,6 +1821,7 @@
 		color: #777777;
 	}
 
+    /*CONTROL PANEL COLOR*/
 	a:hover {
 		color: #c6e0f5 !important;
 	}
@@ -1994,7 +1995,7 @@
 		.button.special {
 			box-shadow: none;
 			background-color: #4c110f;
-			color: #ffffff !important;
+			color: #4c110f !important;
 		}
 
 			input[type="submit"].special:hover,
@@ -2003,7 +2004,7 @@
 			button.special:hover,
 			.button.special:hover {
 				background-color: #4c110f;
-				color: #ffffff !important;
+				color: #4c110f !important;
 			}
 
 			input[type="submit"].special:active,
@@ -2198,6 +2199,7 @@
 		border-color: #eaeaea;
 	}
 
+    /*MAIN FOCUS*/
 		input[type="text"]:focus,
 		input[type="password"]:focus,
 		input[type="email"]:focus,
@@ -2306,12 +2308,12 @@
 			}
 
 			.icon.major.style3:before {
-				background-color: #a7b7f1;
+				background-color: #4c110f;
 				color: #ffffff;
 			}
 
 			.icon.major.style4:before {
-				background-color: #c6b6f2;
+				background-color: #4c110f;
 				color: #ffffff;
 			}
 
@@ -2348,43 +2350,43 @@
 		}
 
 		.icon.alt.fa-twitter:active:before {
-			background-color: #4cbcdd;
+			background-color: #4c110f;
 		}
 
 		.icon.alt.fa-facebook:before {
-			background-color: #8cbae9;
+			background-color: #4c110f;
 		}
 
 		.icon.alt.fa-facebook:hover:before {
-			background-color: #77ade5;
+			background-color: #4c110f;
 		}
 
 		.icon.alt.fa-facebook:active:before {
-			background-color: #4c93dd;
+			background-color: #4c110f;
 		}
 
 		.icon.alt.fa-youtube:before {
-			background-color: #e98ca4;
+			background-color: #4c110f;
 		}
 
 		.icon.alt.fa-youtube:hover:before {
-			background-color: #e57793;
+			background-color: #4c110f;
 		}
 
 		.icon.alt.fa-youtube:active:before {
-			background-color: #dd4c71;
+			background-color: #4c110f;
 		}
 
 		.icon.alt.fa-instagram:before {
-			background-color: #83bbde;
+			background-color: #4c110f;
 		}
 
 		.icon.alt.fa-instagram:hover:before {
-			background-color: #6fb0d9;
+			background-color: #4c110f;
 		}
 
 		.icon.alt.fa-instagram:active:before {
-			background-color: #479ace;
+			background-color: #4c110f;
 		}
 
 		@media screen and (max-width: 736px) {
@@ -3408,7 +3410,7 @@
 				#banner button.special:hover,
 				#banner .button.special:hover {
 					background-color: #4c110f;
-					color: #ffffff;
+					color: #c6e0f5;
 				}
 
 				#banner input[type="submit"].special:active,
@@ -3417,7 +3419,7 @@
 				#banner button.special:active,
 				#banner .button.special:active {
 					background-color: #4c110f;
-					color: #ffffff;
+					color: #c6e0f5;
 				}
 
 		#banner input, #banner select, #banner textarea {

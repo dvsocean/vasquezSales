@@ -40,7 +40,7 @@
         <ul class="links">
             @if($user->admin)
                 <li>
-                    <a href="#">Administrators</a>
+                    <a href="{{route('admin')}}">Control Panel</a>
                 </li>
                 <br><br>
             @endif
@@ -78,7 +78,7 @@
         </ul>
     @else
         <ul class="links">
-            <li><a href="{{url('/contact')}}" class="button fit">Contact</a></li>
+            <li><a href="{{url('/login')}}">Login</a></li>
         </ul>
     @endif
 </nav>

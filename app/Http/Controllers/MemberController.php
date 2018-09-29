@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Photo;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class MemberController extends Controller
 {
@@ -27,9 +28,7 @@ class MemberController extends Controller
         }
 
         $user->update($input);
-
-//        Session::flash('message', ''. ucfirst($user->name) .'s profile has been updated');
-
+        Session::flash('message', ''. ucfirst($user->name) .'s profile has been updated');
         return redirect('/profile');
     }
 }
