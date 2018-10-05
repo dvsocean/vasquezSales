@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 
 $signedIn = Auth::check();
 $user = Auth::user();
-//$front_page_content = FrontPageContent::all();
+$fpc = \App\FrontPageContent::find(1);
 ?>
 
 @if($signedIn)
@@ -40,7 +40,7 @@ $user = Auth::user();
                     <div class="row">
                         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                             <h3>Performance and accessories</h3>
-                            <textarea name="performance" class="form-control" rows="7" cols="7">{{}}</textarea>
+                            <textarea name="performance" class="form-control" rows="7" cols="7">{{$fpc->performance}}</textarea>
                             <br>
                             <input type="submit" value="submit" class="form-control">
                         </div>
