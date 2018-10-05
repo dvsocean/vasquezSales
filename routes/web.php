@@ -37,3 +37,9 @@ Route::get('/admin', function(){
 
 //Desired
 Route::post('/desired', 'DesiredController@update');
+
+//Front page content
+Route::get('/frontPageContent', function(){
+    return view('admin_page.front_page_content.front_page_content');
+})->name('front_page_content');
+Route::post('/front_page_content', 'FrontPageController@update');

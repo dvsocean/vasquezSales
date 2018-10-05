@@ -83,7 +83,7 @@ $user = Auth::user();
         <!--SECTION 2-->
         <div class="container">
             <form action="/desired" method="POST">
-                <input type="hidden" value="{{$user->id}}">
+                <input type="hidden" value="{{$user->id}}" name="user_id">
                 {{ csrf_field() }}
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -104,7 +104,7 @@ $user = Auth::user();
 
                 <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
                     <label>Hardware:</label>
-                    <input type="text" name="hardware" placeholder="Make/model"/>
+                    <input type="text" name="hardware" value="" placeholder="Make/model"/>
                     <br>
                     <label>Year:</label>
                     <input type="text" name="year" placeholder="Year"/>
@@ -134,7 +134,7 @@ $user = Auth::user();
                     <p>
                         Why? Because we know that starting a business can be a maze so let us
                         lead you through it since we've done it before. We also know how to blow
-                        up cars. Plus, we support local moms :)
+                        up cars. Plus, we support single moms :)
                     </p>
                 </div>
             </div>

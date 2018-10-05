@@ -13,7 +13,7 @@ class DesiredTable extends Migration
      */
     public function up()
     {
-        Schema::create('desired', function (Blueprint $table) {
+        Schema::create('desireds', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->nullable();
             $table->string('hardware')->nullable();

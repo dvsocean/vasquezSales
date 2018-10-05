@@ -33,6 +33,6 @@ class User extends Authenticatable
     }
 
     public function equipment(){
-        return $this->belongsTo('App\Desired');
+        return $this->hasOne('App\Desired');
     }
 }
