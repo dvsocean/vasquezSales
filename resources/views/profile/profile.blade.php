@@ -38,9 +38,7 @@ $user = Auth::user();
                 {{ csrf_field() }}
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    @if (Session::has('message'))
-                        <div class="alert alert-info text-center">{{ Session::get('message') }}</div><br>
-                    @endif
+                    @include('includes.error_messages.index')
                     <h1 class="text-center">{{$user->name}}'s Profile</h1>
                 </div>
             </div>

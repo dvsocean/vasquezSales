@@ -22,5 +22,8 @@
         <li>
             <a href="{{route('front_page_content')}}">Front page content</a>
         </li>
+        <li>
+            <a href="{{route('quad_content')}}">Quad content</a>
+        </li>
     </ul>
 </nav>

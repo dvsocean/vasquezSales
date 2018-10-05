@@ -25,6 +25,18 @@ class FrontPageContent extends Migration
             $table->text('body_two');
             $table->string('heading_three');
             $table->text('body_three');
+
+            $table->string('quad_title');
+
+            $table->string('quad_heading_one');
+            $table->text('quad_body_one');
+            $table->string('quad_heading_two');
+            $table->text('quad_body_two');
+            $table->string('quad_heading_three');
+            $table->text('quad_body_three');
+            $table->string('quad_heading_four');
+            $table->text('quad_body_four');
+
             $table->timestamps();
         });
     }

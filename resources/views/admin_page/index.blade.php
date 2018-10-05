@@ -38,9 +38,7 @@ $user = Auth::user();
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        @if (Session::has('message'))
-                            <div class="alert alert-info text-center">{{ Session::get('message') }}</div><br>
-                        @endif
+                        @include('includes.error_messages.index')<br>
                     </div>
                 </div>
             </div>

@@ -115,42 +115,35 @@
 							<section id="four" class="main special">
 								<div class="inner">
 									<header>
-										<h2>Many wrong roads but you finally found the right one</h2>
+										<h2>{{$fpc->quad_title}}</h2>
 									</header>
 									<div class="features">
 										<section>
 											<span class="icon major fab fa-bluetooth style1"></span>
-											<h3>Equipped for the long haul</h3>
+											<h3>{{$fpc->quad_heading_one}}</h3>
 											<p>
-												With modern technology enabling hands free operations
-												you are free to tackle more work and not get stuck on
-												confusing downtown roads.
+												{{$fpc->quad_body_one}}
 											</p>
 										</section>
 										<section>
 											<span class="icon major fas fa-align-left style2"></span>
-											<h3>IFTA, DOT AUTH and REGISTRATION</h3>
+											<h3>{{$fpc->quad_heading_two}}</h3>
 											<p>
-												We can help you with decals or identification for your truck.
-												We have standard templates to choose from or if you have your
-												own idea we can turn that into a decal.
+												{{$fpc->quad_body_two}}
 											</p>
 										</section>
 										<section>
 											<span class="icon major fas fa-camera style3"></span>
-											<h3>Let us sell your truck</h3>
+											<h3>{{$fpc->quad_heading_three}}</h3>
 											<p>
-												We can repair it, wash it and then photograph it, ultimately
-												help you get top dollar when your ready to part with your truck.
+												{{$fpc->quad_body_three}}
 											</p>
 										</section>
 										<section>
 											<span class="icon major fas fa-calculator style4"></span>
-											<h3>Were good at math</h3>
+											<h3>{{$fpc->quad_heading_four}}</h3>
 											<p>
-												We can project your expenditures to help you gauge your budget.
-												Many times buyers focus on cutting the cost without realizing how
-												they cut their benefits.
+												{{$fpc->quad_body_four}}
 											</p>
 										</section>
 									</div>

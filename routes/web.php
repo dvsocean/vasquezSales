@@ -43,3 +43,9 @@ Route::get('/frontPageContent', function(){
     return view('admin_page.front_page_content.front_page_content');
 })->name('front_page_content');
 Route::post('/front_page_content', 'FrontPageController@update');
+
+//quad content
+Route::get('/quad_content', function(){
+    return view('admin_page.quad_content.quad_content');
+})->name('quad_content');
+Route::post('/updateQuads', 'FrontPageController@updateQuadContent');
