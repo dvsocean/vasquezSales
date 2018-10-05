@@ -3,6 +3,7 @@
 	<?php
 	$signedIn = Auth::check();
 	$user = Auth::user();
+	$fpc = App\FrontPageContent::find(1);
 	?>
 	<!--HEADER-->
 	@include('includes.header_footer.header')
@@ -61,8 +62,7 @@
 											<h2>Performance and accessories</h2>
 										</header>
 										<p>
-											Make sure your new truck runs strong with dependable parts and the latest accessories.
-											We have experience with CB radios, fifth wheels, hydraulics, compressors and much more.
+											{{$fpc->performance}}
 										</p>
 									</div>
 									<!--
@@ -81,10 +81,7 @@
 											<h2>We provide financing</h2>
 										</header>
 										<p>
-											Through a successful partnership with banks and finance companies, we are
-											able to provide a viable solution that will enable you to own your truck.
-											To speak to an agent contact us below and we will provide more information
-											on how you can get started.
+											{{$fpc->finance}}
 										</p>
 									</div>
 									<!--
@@ -103,10 +100,7 @@
 											<h2>Service & Repair</h2>
 										</header>
 										<p>
-											Stay ahead of the curve by letting us handle maintenance and any required
-											repairs. We have a knowledgeable team that can handle work around engine,
-											transmission and frame. Body services are also available through a network
-											of affiliated vendors.
+											{{$fpc->repair}}
 										</p>
 									</div>
 									<!--

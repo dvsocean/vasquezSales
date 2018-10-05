@@ -33,6 +33,17 @@ $user = Auth::user();
             <br>
             <h1 class="text-center">Administrators Area</h1>
             <h2 class="text-center">control panel is optimized for {{ucfirst($user->name)}}</h2>
+            <br>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        @if (Session::has('message'))
+                            <div class="alert alert-info text-center">{{ Session::get('message') }}</div><br>
+                        @endif
+                    </div>
+                </div>
+            </div>
 
             <div class="text-center">
                 <p>
