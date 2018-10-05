@@ -19,9 +19,12 @@ class FrontPageContent extends Migration
     {
         Schema::create('front_page_contents', function (Blueprint $table) {
             $table->integer('id')->default(1);
-            $table->string('performance', 500)->default('REPLACE WITH CONTENT');
-            $table->string('finance', 500)->default('REPLACE WITH CONTENT');
-            $table->string('repair', 500)->default('REPLACE WITH CONTENT');
+            $table->string('heading_one');
+            $table->text('body_one');
+            $table->string('heading_two');
+            $table->text('body_two');
+            $table->string('heading_three');
+            $table->text('body_three');
             $table->timestamps();
         });
     }

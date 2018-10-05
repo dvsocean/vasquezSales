@@ -59,10 +59,10 @@
 								<div class="inner spotlight style1">
 									<div class="content">
 										<header>
-											<h2>Performance and accessories</h2>
+											<h2>{{$fpc->heading_one}}</h2>
 										</header>
 										<p>
-											{{$fpc->performance}}
+											{{$fpc->body_one}}
 										</p>
 									</div>
 									<!--
@@ -78,10 +78,10 @@
 								<div class="inner spotlight alt style2">
 									<div class="content">
 										<header>
-											<h2>We provide financing</h2>
+											<h2>{{$fpc->heading_two}}</h2>
 										</header>
 										<p>
-											{{$fpc->finance}}
+											{{$fpc->body_two}}
 										</p>
 									</div>
 									<!--
@@ -97,10 +97,10 @@
 								<div class="inner spotlight style3">
 									<div class="content">
 										<header>
-											<h2>Service & Repair</h2>
+											<h2>{{$fpc->heading_three}}</h2>
 										</header>
 										<p>
-											{{$fpc->repair}}
+											{{$fpc->body_three}}
 										</p>
 									</div>
 									<!--

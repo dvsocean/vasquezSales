@@ -39,20 +39,23 @@ $fpc = \App\FrontPageContent::find(1);
                     <div class="row">
                         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                             <br><br>
-                            <h3>Performance and accessories</h3>
-                            <textarea name="performance" class="form-control" rows="7" cols="250">{{$fpc->performance}}</textarea>
+                            <label>Heading one:</label><br>
+                            <input type="text" name="heading_one" placeholder="insert heading one" value="{{$fpc->heading_one}}"/><br>
+                            <textarea name="body_one" class="form-control" rows="7" cols="250">{{$fpc->body_one}}</textarea>
                         </div>
 
                         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                             <br><br>
-                            <h3>Financing</h3>
-                            <textarea name="finance" class="form-control" rows="7" cols="250">{{$fpc->finance}}</textarea>
+                            <label>Heading two:</label><br>
+                            <input type="text" name="heading_two" placeholder="insert heading two" value="{{$fpc->heading_two}}"/><br>
+                            <textarea name="body_two" class="form-control" rows="7" cols="250">{{$fpc->body_two}}</textarea>
                         </div>
 
                         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                             <br><br>
-                            <h3>Service and Repair</h3>
-                            <textarea name="repair" class="form-control" rows="7" cols="250">{{$fpc->repair}}</textarea>
+                            <label>Heading three:</label><br>
+                            <input type="text" name="heading_three" placeholder="insert heading three" value="{{$fpc->heading_three}}"/><br>
+                            <textarea name="body_three" class="form-control" rows="7" cols="250">{{$fpc->body_three}}</textarea>
                         </div>
                     </div>
 
