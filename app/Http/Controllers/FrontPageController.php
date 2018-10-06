@@ -15,6 +15,7 @@ class FrontPageController extends Controller
             Session::flash('message', 'No modifications made');
             return view('admin_page.index');
         } else {
+            $fpc->main_title = $request->main_title;
             $fpc->heading_one = $request->heading_one;
             $fpc->body_one = $request->body_one;
             $fpc->heading_two = $request->heading_two;
@@ -42,6 +43,7 @@ class FrontPageController extends Controller
             $fpc->quad_body_three = $request->quad_body_three;
             $fpc->quad_heading_four = $request->quad_heading_four;
             $fpc->quad_body_four = $request->quad_body_four;
+            $fpc->footer_title = $request->footer_title;
             $fpc->save();
             Session::flash('message', 'You have successfully updated content inside the quad portion of the front page');
             return view('admin_page.index');
@@ -55,7 +57,7 @@ class FrontPageController extends Controller
         && $fpc->quad_body_one == $data->quad_body_one && $fpc->quad_heading_two == $data->quad_heading_two
         && $fpc->quad_body_two == $data->quad_body_two && $fpc->quad_heading_three == $data->quad_heading_three
         && $fpc->quad_body_three == $data->quad_body_three && $fpc->quad_heading_four == $data->quad_heading_four
-        && $fpc->quad_body_four == $data->quad_body_four){
+        && $fpc->quad_body_four == $data->quad_body_four && $fpc->footer_title == $data->footer_title){
             $flag = true;
         }
         return $flag;
@@ -66,7 +68,8 @@ class FrontPageController extends Controller
         $flag = false;
         if($fpc->heading_one == $data->heading_one && $fpc->body_one == $data->body_one
         && $fpc->heading_two == $data->heading_two && $fpc->body_two == $data->body_two
-        && $fpc->heading_three == $data->heading_three && $fpc->body_three == $data->body_three){
+        && $fpc->heading_three == $data->heading_three && $fpc->body_three == $data->body_three
+        && $fpc->main_title == $data->main_title){
             $flag = true;
         }
         return $flag;

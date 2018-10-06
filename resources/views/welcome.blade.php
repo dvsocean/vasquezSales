@@ -31,7 +31,7 @@
 					<section id="banner" data-video="">
 						<div class="inner">
 							<header>
-								<h1>Tow Trucks 4 Sale</h1>
+								<h1>{{$fpc->main_title}}</h1>
 								@if($signedIn)
 									<h2>Welcome {{$user->name}}</h2>
 									@if($user->admin)
@@ -154,11 +154,9 @@
 							<section id="cta" class="main special">
 								<div class="inner">
 									<p>
-										Life is a journey that must be traveled no matter how rough the road gets.<br>
-										So do it comfortably.
+										{{$fpc->footer_title}}
 									</p>
 									<ul class="actions vertical">
-										<li><a href="#" class="button special big">Get Started</a></li>
 										<li><a href="#" class="button big">Learn More</a></li>
 									</ul>
 								</div>

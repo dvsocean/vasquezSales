@@ -19,6 +19,9 @@ class FrontPageContent extends Migration
     {
         Schema::create('front_page_contents', function (Blueprint $table) {
             $table->integer('id')->default(1);
+
+            $table->string('main_title');
+
             $table->string('heading_one');
             $table->text('body_one');
             $table->string('heading_two');
@@ -36,6 +39,8 @@ class FrontPageContent extends Migration
             $table->text('quad_body_three');
             $table->string('quad_heading_four');
             $table->text('quad_body_four');
+
+            $table->string('footer_title');
 
             $table->timestamps();
         });
