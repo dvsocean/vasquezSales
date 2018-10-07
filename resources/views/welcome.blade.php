@@ -28,29 +28,58 @@
 					* Your video must be offered in both .mp4 and .webm formats to work everywhere.
 				-->
 				{{--<section id="banner" data-video="images/banner">--}}
-					<section id="banner" data-video="">
-						<div class="inner">
-							<header>
-								<h1>{{$fpc->main_title}}</h1>
-								@if($signedIn)
-									<h2>Welcome {{$user->name}}</h2>
-									@if($user->admin)
-										<ul class="actions vertical">
-											<li><a href="{{route('admin')}}" class="button big">Control Panel</a></li>
-										</ul>
-									@endif
-								@endif
-							</header>
-							@if(!$signedIn)
-								<p>Freightliner, Kenworth, Mack, Peterbuilt, Volvo, Hino, International</p>
-								<ul class="actions vertical">
-									<li><a href="{{route('register')}}" class="button big">Register</a></li>
-									<li><a href="/login" class="button big">Login</a></li>
-								</ul>
-							@endif
-						</div>
-						<a href="#one" class="more">Learn More</a>
-					</section>
+
+
+
+
+				<!--PLACEHOLDER-->
+					{{--<section id="banner" data-video="">--}}
+						{{--<div class="inner">--}}
+							{{--<header>--}}
+								{{--<h1>{{$fpc->main_title}}</h1>--}}
+								{{--@if($signedIn)--}}
+									{{--<h2>Welcome {{$user->name}}</h2>--}}
+									{{--@if($user->admin)--}}
+										{{--<ul class="actions vertical">--}}
+											{{--<li><a href="{{route('admin')}}" class="button big">Control Panel</a></li>--}}
+										{{--</ul>--}}
+									{{--@endif--}}
+								{{--@endif--}}
+							{{--</header>--}}
+							{{--@if(!$signedIn)--}}
+								{{--<p>Freightliner, Kenworth, Mack, Peterbuilt, Volvo, Hino, International</p>--}}
+								{{--<ul class="actions vertical">--}}
+									{{--<li><a href="{{route('register')}}" class="button big">Register</a></li>--}}
+									{{--<li><a href="/login" class="button big">Login</a></li>--}}
+								{{--</ul>--}}
+							{{--@endif--}}
+						{{--</div>--}}
+						{{--<a href="#one" class="more">Learn More</a>--}}
+					{{--</section>--}}
+				<!--PLACEHOLDER-->
+
+				<section id="tiny" class="tinyslide">
+					<aside class="slides">
+						<figure> <img src="images/LA1.jpg" alt="">
+							<figcaption><!--PLACEHOLDER--></figcaption>
+						</figure>
+						<figure> <img src="images/LA1.jpg" alt="">
+							<figcaption><!--PLACEHOLDER--></figcaption>
+						</figure>
+						<figure> <img src="images/LA1.jpg" alt="">
+							<figcaption><!--PLACEHOLDER--></figcaption>
+						</figure>
+						<figure> <img src="images/LA1.jpg" alt="">
+							<figcaption><!--PLACEHOLDER--></figcaption>
+						</figure>
+					</aside>
+				</section>
+				<script> tiny = $('#tiny').tiny().data('api_tiny');</script>
+
+
+
+
+
 
 				<!-- Wrapper -->
 					<div id="wrapper">
