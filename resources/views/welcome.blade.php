@@ -32,7 +32,7 @@
 
 
 
-				<!--PLACEHOLDER-->
+				<!--TEMPORARILY QUARANTINED-->
 					{{--<section id="banner" data-video="">--}}
 						{{--<div class="inner">--}}
 							{{--<header>--}}
@@ -56,7 +56,7 @@
 						{{--</div>--}}
 						{{--<a href="#one" class="more">Learn More</a>--}}
 					{{--</section>--}}
-				<!--PLACEHOLDER-->
+				<!--TEMPORARILY QUARANTINED-->
 
 				<section id="tiny" class="tinyslide">
 					<aside class="slides">
@@ -74,7 +74,7 @@
 						</figure>
 					</aside>
 				</section>
-				<script> tiny = $('#tiny').tiny().data('api_tiny');</script>
+				<script> var tiny = $('#tiny').tiny().data('api_tiny');</script>
 
 
 

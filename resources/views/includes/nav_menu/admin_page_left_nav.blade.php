@@ -16,17 +16,16 @@
     }
 </style>
 
-
 <nav id="admin_nav">
     <ul id="admin_ul">
+        <li>
+            <a href="{{route('editSliders')}}">Slider images</a>
+        </li>
         <li>
             <a href="{{route('front_page_content')}}">Front page content</a>
         </li>
         <li>
             <a href="{{route('quad_content')}}">Quad content</a>
-        </li>
-        <li>
-            <a href="#">Button text</a>
         </li>
     </ul>
 </nav>

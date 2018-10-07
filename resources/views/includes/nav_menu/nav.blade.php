@@ -80,5 +80,8 @@
         <ul class="links">
             <li><a href="{{url('/login')}}">Login</a></li>
         </ul>
+        <ul class="links">
+            <li><a href="{{route('register')}}">Register</a></li>
+        </ul>
     @endif
 </nav>
