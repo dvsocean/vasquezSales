@@ -14,7 +14,7 @@ class TinyImages extends Migration
     public function up()
     {
         Schema::create('tiny_images', function (Blueprint $table) {
-            $table->integer('id')->default(1);
+            $table->increments('id');
             $table->string('tiny_one')->nullable();
             $table->string('tiny_two')->nullable();
             $table->string('tiny_three')->nullable();

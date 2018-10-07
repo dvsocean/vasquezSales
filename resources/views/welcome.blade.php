@@ -4,6 +4,7 @@
 	$signedIn = Auth::check();
 	$user = Auth::user();
 	$fpc = App\FrontPageContent::find(1);
+	$tiny = App\TinyImages::find(1);
 	?>
 	<!--HEADER-->
 	@include('includes.header_footer.header')
@@ -60,16 +61,16 @@
 
 				<section id="tiny" class="tinyslide">
 					<aside class="slides">
-						<figure> <img src="images/LA1.jpg" alt="">
+						<figure> <img src="{{$tiny->tiny_one}}" alt="" height="2200" width="1600">
 							<figcaption><!--PLACEHOLDER--></figcaption>
 						</figure>
-						<figure> <img src="images/LA1.jpg" alt="">
+						<figure> <img src="{{$tiny->tiny_two}}" alt="">
 							<figcaption><!--PLACEHOLDER--></figcaption>
 						</figure>
-						<figure> <img src="images/LA1.jpg" alt="">
+						<figure> <img src="{{$tiny->tiny_three}}" alt="">
 							<figcaption><!--PLACEHOLDER--></figcaption>
 						</figure>
-						<figure> <img src="images/LA1.jpg" alt="">
+						<figure> <img src="{{$tiny->tiny_four}}" alt="">
 							<figcaption><!--PLACEHOLDER--></figcaption>
 						</figure>
 					</aside>

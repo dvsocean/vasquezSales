@@ -54,3 +54,4 @@ Route::post('/updateQuads', 'FrontPageController@updateQuadContent');
 Route::get('/editSliders', function(){
     return view('admin_page.slider_images.slider_images');
 })->name('editSliders');
+Route::post('/updateSliderImages', 'TinyController@updateSliders');

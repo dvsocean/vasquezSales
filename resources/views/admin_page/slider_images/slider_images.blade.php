@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 
 $signedIn = Auth::check();
 $user = Auth::user();
+$tiny = App\TinyImages::find(1);
 
 ?>
 
@@ -37,20 +38,20 @@ $user = Auth::user();
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                <form action="#" method="POST" enctype="multipart/form-data">
+                <form action="/updateSliderImages" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <h3>First image:</h3>
-                    <img src="#" height="100" width="150"/><br>
+                    <img src="{{$tiny->tiny_one}}" height="200" width="250" class="img-rounded"/><br>
                     <input type="file" name="tinyOne" /><br>
                     <input type="submit" name="tiny_one_submit" value="apply"/>
                 </form>
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                <form action="#" method="POST" enctype="multipart/form-data">
+                <form action="/updateSliderImages" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <h3>Second image:</h3>
-                    <img src="#" height="100" width="150"/><br>
+                    <img src="{{$tiny->tiny_two}}" height="200" width="250" class="img-rounded"/><br>
                     <input type="file" name="tinyTwo" /><br>
                     <input type="submit" name="tiny_two_submit" value="apply"/>
                 </form>
@@ -59,19 +60,20 @@ $user = Auth::user();
 
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                <form action="#" method="POST" enctype="multipart/form-data">
+                <form action="/updateSliderImages" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <h3>Third image:</h3>
-                    <img src="#" height="100" width="150"/><br>
+                    <img src="{{$tiny->tiny_three}}" height="200" width="250" class="img-rounded"/><br>
                     <input type="file" name="tinyThree" /><br>
                     <input type="submit" name="tiny_three_submit" value="apply"/>
                 </form>
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                <form action="#" method="POST" enctype="multipart/form-data">
+                <form action="/updateSliderImages" method="POST" enctype="multipart/form-data">
+                    {{ csrf_field() }}
                     <h3>Fourth image:</h3>
-                    <img src="#" height="100" width="150"/><br>
+                    <img src="{{$tiny->tiny_four}}" height="200" width="250" class="img-rounded"/><br>
                     <input type="file" name="tinyFour" /><br>
                     <input type="submit" name="tiny_four_submit" value="apply"/>
                 </form>
