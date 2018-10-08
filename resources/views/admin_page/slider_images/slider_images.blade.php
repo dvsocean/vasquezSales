@@ -36,49 +36,43 @@ $tiny = App\TinyImages::find(1);
     <br>
 
     <div class="container">
+        <form action="/updateSliderImages" method="POST" enctype="multipart/form-data">
+            {{ csrf_field() }}
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                <form action="/updateSliderImages" method="POST" enctype="multipart/form-data">
-                    {{ csrf_field() }}
-                    <h3>First image:</h3>
-                    <img src="{{!empty($tiny->tiny_one) ? $tiny->tiny_one : 'tiny_images/WALT.jpg'}}" height="200" width="250" class="img-rounded"/><br>
-                    <input type="file" name="tinyOne" /><br>
-                    <input type="submit" name="tiny_one_submit" value="apply"/>
-                </form>
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <h3>First image:</h3>
+                <img src="{{!empty($tiny->tiny_one) ? $tiny->tiny_one : 'tiny_images/WALT.jpg'}}" height="200" width="250" class="img-rounded"/><br>
+                <input type="file" name="tinyOne" /><br>
             </div>
 
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                <form action="/updateSliderImages" method="POST" enctype="multipart/form-data">
-                    {{ csrf_field() }}
-                    <h3>Second image:</h3>
-                    <img src="{{!empty($tiny->tiny_two) ? $tiny->tiny_two : 'tiny_images/WALT.jpg'}}" height="200" width="250" class="img-rounded"/><br>
-                    <input type="file" name="tinyTwo" /><br>
-                    <input type="submit" name="tiny_two_submit" value="apply"/>
-                </form>
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <h3>Second image:</h3>
+                <img src="{{!empty($tiny->tiny_two) ? $tiny->tiny_two : 'tiny_images/WALT.jpg'}}" height="200" width="250" class="img-rounded"/><br>
+                <input type="file" name="tinyTwo" /><br>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <h3>Third image:</h3>
+                <img src="{{!empty($tiny->tiny_three) ? $tiny->tiny_three : 'tiny_images/WALT.jpg'}}" height="200" width="250" class="img-rounded"/><br>
+                <input type="file" name="tinyThree" /><br>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                <form action="/updateSliderImages" method="POST" enctype="multipart/form-data">
-                    {{ csrf_field() }}
-                    <h3>Third image:</h3>
-                    <img src="{{!empty($tiny->tiny_three) ? $tiny->tiny_three : 'tiny_images/WALT.jpg'}}" height="200" width="250" class="img-rounded"/><br>
-                    <input type="file" name="tinyThree" /><br>
-                    <input type="submit" name="tiny_three_submit" value="apply"/>
-                </form>
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <!--PLACEHOLDER-->
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                <form action="/updateSliderImages" method="POST" enctype="multipart/form-data">
-                    {{ csrf_field() }}
-                    <h3>Fourth image:</h3>
-                    <img src="{{!empty($tiny->tiny_four) ? $tiny->tiny_four : 'tiny_images/WALT.jpg'}}" height="200" width="250" class="img-rounded"/><br>
-                    <input type="file" name="tinyFour" /><br>
-                    <input type="submit" name="tiny_four_submit" value="apply"/>
-                </form>
+                <br>
+                <input type="submit" name="tiny_four_submit" value="apply" class="form-control"/>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <!--PLACEHOLDER-->
             </div>
         </div>
+        </form>
     </div>
 </div>
 

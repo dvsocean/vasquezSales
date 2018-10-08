@@ -70,9 +70,6 @@
 						<figure> <img src="{{!empty($tiny->tiny_three) ? $tiny->tiny_three : 'tiny_images/LA1.jpg'}}" alt="" height="2200" width="1600">
 							<figcaption><!--PLACEHOLDER--></figcaption>
 						</figure>
-						<figure> <img src="{{!empty($tiny->tiny_four) ? $tiny->tiny_four : 'tiny_images/LA1.jpg'}}" alt="" height="2200" width="1600">
-							<figcaption><!--PLACEHOLDER--></figcaption>
-						</figure>
 					</aside>
 				</section>
 				<script> var tiny = $('#tiny').tiny().data('api_tiny');</script>
