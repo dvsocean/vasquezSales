@@ -12,7 +12,6 @@ class TinyController extends Controller
         $tiny = TinyImages::find(1);
 
         if ($request->hasFile('tinyOne')) {
-            $sliderNo = 1;
             $file = $request->file('tinyOne');
             if ($tiny->tiny_one) {
                 if (file_exists($tiny->tiny_one)) {
@@ -23,13 +22,11 @@ class TinyController extends Controller
             $name = time() . $file->getClientOriginalName();
             $file->move('tiny_images/', $name);
             $tiny->tiny_one = 'tiny_images/' . $name;
-            $tiny->save();
         }
 
         if ($request->hasFile('tinyTwo')) {
-            $sliderNo = 2;
             $file = $request->file('tinyTwo');
-            if ($tiny->tiny_two) {
+            if (!empty($tiny->tiny_two)) {
                 if (file_exists($tiny->tiny_two)) {
                     unlink($tiny->tiny_two);
                     $tiny->delete($tiny->tiny_two);
@@ -38,11 +35,9 @@ class TinyController extends Controller
             $name = time() . $file->getClientOriginalName();
             $file->move('tiny_images/', $name);
             $tiny->tiny_two = 'tiny_images/' . $name;
-            $tiny->save();
         }
 
         if ($request->hasFile('tinyThree')) {
-            $sliderNo = 3;
             $file = $request->file('tinyThree');
             if ($tiny->tiny_three) {
                 if (file_exists($tiny->tiny_three)) {
@@ -53,11 +48,9 @@ class TinyController extends Controller
             $name = time() . $file->getClientOriginalName();
             $file->move('tiny_images/', $name);
             $tiny->tiny_three = 'tiny_images/' . $name;
-            $tiny->save();
         }
 
         if ($request->hasFile('tinyFour')) {
-            $sliderNo = 4;
             $file = $request->file('tinyFour');
             if ($tiny->tiny_four) {
                 if (file_exists($tiny->tiny_four)) {
@@ -68,10 +61,10 @@ class TinyController extends Controller
             $name = time() . $file->getClientOriginalName();
             $file->move('tiny_images/', $name);
             $tiny->tiny_four = 'tiny_images/' . $name;
-            $tiny->save();
         }
 
-        Session::flash('message', 'Slider number ' . $sliderNo . ' has been updated');
+        $tiny->save();
+        Session::flash('message', 'Slides on the home page have been updated');
         return view('admin_page.index');
     }
 }

@@ -61,16 +61,16 @@
 
 				<section id="tiny" class="tinyslide">
 					<aside class="slides">
-						<figure> <img src="{{$tiny->tiny_one}}" alt="" height="2200" width="1600">
+						<figure> <img src="{{!empty($tiny->tiny_one) ? $tiny->tiny_one : 'tiny_images/LA1.jpg'}}" alt="" height="2200" width="1600">
 							<figcaption><!--PLACEHOLDER--></figcaption>
 						</figure>
-						<figure> <img src="{{$tiny->tiny_two}}" alt="">
+						<figure> <img src="{{!empty($tiny->tiny_two) ? $tiny->tiny_two : 'tiny_images/LA1.jpg'}}" alt="" height="2200" width="1600">
 							<figcaption><!--PLACEHOLDER--></figcaption>
 						</figure>
-						<figure> <img src="{{$tiny->tiny_three}}" alt="">
+						<figure> <img src="{{!empty($tiny->tiny_three) ? $tiny->tiny_three : 'tiny_images/LA1.jpg'}}" alt="" height="2200" width="1600">
 							<figcaption><!--PLACEHOLDER--></figcaption>
 						</figure>
-						<figure> <img src="{{$tiny->tiny_four}}" alt="">
+						<figure> <img src="{{!empty($tiny->tiny_four) ? $tiny->tiny_four : 'tiny_images/LA1.jpg'}}" alt="" height="2200" width="1600">
 							<figcaption><!--PLACEHOLDER--></figcaption>
 						</figure>
 					</aside>
