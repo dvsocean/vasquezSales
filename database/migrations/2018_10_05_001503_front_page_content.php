@@ -20,27 +20,27 @@ class FrontPageContent extends Migration
         Schema::create('front_page_contents', function (Blueprint $table) {
             $table->integer('id')->default(1);
 
-            $table->string('main_title');
+            $table->string('main_title')->nullable();
 
-            $table->string('heading_one');
-            $table->text('body_one');
-            $table->string('heading_two');
-            $table->text('body_two');
-            $table->string('heading_three');
-            $table->text('body_three');
+            $table->string('heading_one')->nullable();
+            $table->text('body_one')->nullable();
+            $table->string('heading_two')->nullable();
+            $table->text('body_two')->nullable();
+            $table->string('heading_three')->nullable();
+            $table->text('body_three')->nullable();
 
-            $table->string('quad_title');
+            $table->string('quad_title')->nullable();
 
-            $table->string('quad_heading_one');
-            $table->text('quad_body_one');
-            $table->string('quad_heading_two');
-            $table->text('quad_body_two');
-            $table->string('quad_heading_three');
-            $table->text('quad_body_three');
-            $table->string('quad_heading_four');
-            $table->text('quad_body_four');
+            $table->string('quad_heading_one')->nullable();
+            $table->text('quad_body_one')->nullable();
+            $table->string('quad_heading_two')->nullable();
+            $table->text('quad_body_two')->nullable();
+            $table->string('quad_heading_three')->nullable();
+            $table->text('quad_body_three')->nullable();
+            $table->string('quad_heading_four')->nullable();
+            $table->text('quad_body_four')->nullable();
 
-            $table->string('footer_title');
+            $table->string('footer_title')->nullable();
 
             $table->timestamps();
         });

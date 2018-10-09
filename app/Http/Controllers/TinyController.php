@@ -9,7 +9,11 @@ use Illuminate\Support\Facades\Session;
 class TinyController extends Controller
 {
     public function updateSliders(Request $request){
-        $tiny = TinyImages::find(1);
+        if(TinyImages::find(1)){
+            $tiny = TinyImages::find(1);
+        } else {
+            $tiny = TinyImages::create(['tiny_one'=>'', 'tiny_two'=>'', 'tiny_three'=>'', 'tiny_four'=>'']);
+        }
 
         if ($request->hasFile('tinyOne')) {
             $file = $request->file('tinyOne');
