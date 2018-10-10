@@ -55,8 +55,12 @@ $user = Auth::user();
 
 <div id="wrapper">
 
+    <!--NAV BAR STYLES-->
+    @include('includes.admin_page_styling.admin_styles')
+    <!--NAV BAR STYLES-->
+
     <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <nav id="nav-top" class="navbar navbar-fixed-top" role="navigation">
         <div class="navbar-header">
             <a class="navbar-brand" href="#"><!--PLACEHOLDER--></a>
         </div>
@@ -69,12 +73,12 @@ $user = Auth::user();
         </button>
 
         <ul class="nav navbar-nav navbar-left navbar-top-links">
-            <li><a href="/"><i class="fa fa-home fa-fw"></i> Home</a></li>
+            <li><a href="/" id="top-home"><i class="fa fa-home fa-fw"></i> Home</a></li>
         </ul>
 
         <ul class="nav navbar-right navbar-top-links">
             <li class="dropdown navbar-inverse">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="drop-bell">
                     <i class="fa fa-bell fa-fw"></i> <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu dropdown-alerts">
@@ -128,7 +132,7 @@ $user = Auth::user();
                 </ul>
             </li>
             <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"  id="drop-top">
                     <i class="fa fa-user fa-fw"></i> {{ucfirst($user->name)}} <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
@@ -264,7 +268,7 @@ $user = Auth::user();
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">{{ucfirst($user->name).'s Dashboard'}}</h1>
+                <h1 class="page-header">Dashboard</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
