@@ -32,7 +32,7 @@ Route::post('/updateProfile', 'MemberController@update');
 
 //admin page
 Route::get('/admin', function(){
-    return view('admin_page.index');
+    return view('admin_page.admin_index.index');
 })->name('admin');
 
 //Desired
