@@ -174,6 +174,9 @@ $user = Auth::user();
                         <a href="{{route('quad_content')}}"><i class="fa fa-th-large fa-fw"></i> Quad content</a>
                     </li>
                     <li>
+                        <a href="#"><i class="fa fa-font fa-fw"></i> Button labels</a>
+                    </li>
+                    <li>
                         <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
