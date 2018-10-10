@@ -93,7 +93,7 @@ $fpc = \App\FrontPageContent::find(1);
 
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                 <label>Footer title:</label>
-                <input type="text" name="footer_title" placeholder="Enter footer title" value="{{$fpc->main_title}}" class="form-control"/>
+                <input type="text" name="footer_title" placeholder="Enter footer title" value="{{$fpc->footer_title}}" class="form-control"/>
                 <br><br>
             </div>
 

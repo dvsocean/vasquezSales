@@ -15,7 +15,7 @@ class FrontPageController extends Controller
             Session::flash('message', 'No modifications made');
             return view('admin_page.index');
         } else {
-            $fpc->main_title = $request->main_title;
+            //$fpc->main_title = $request->main_title;
             $fpc->heading_one = $request->heading_one;
             $fpc->body_one = $request->body_one;
             $fpc->heading_two = $request->heading_two;
@@ -24,7 +24,7 @@ class FrontPageController extends Controller
             $fpc->body_three = $request->body_three;
             $fpc->save();
             Session::flash('message', 'You have successfully updated content on the front page');
-            return view('admin_page.index');
+            return view('admin_page.admin_index.index');
         }
     }
 
@@ -46,7 +46,7 @@ class FrontPageController extends Controller
             $fpc->footer_title = $request->footer_title;
             $fpc->save();
             Session::flash('message', 'You have successfully updated content inside the quad portion of the front page');
-            return view('admin_page.index');
+            return view('admin_page.admin_index.index');
         }
     }
 
@@ -64,12 +64,16 @@ class FrontPageController extends Controller
     }
 
     public function isContentModified($data){
-        $fpc = FrontPageContent::find(1);
+        if(FrontPageContent::find(1)){
+            $fpc = FrontPageContent::find(1);
+        } else {
+            $fpc = FrontPageContent::create(['heading_one'=>'', 'body_one'=>'', 'heading_two'=>'', 'heading_three'=>'']);
+        }
+
         $flag = false;
         if($fpc->heading_one == $data->heading_one && $fpc->body_one == $data->body_one
         && $fpc->heading_two == $data->heading_two && $fpc->body_two == $data->body_two
-        && $fpc->heading_three == $data->heading_three && $fpc->body_three == $data->body_three
-        && $fpc->main_title == $data->main_title){
+        && $fpc->heading_three == $data->heading_three && $fpc->body_three == $data->body_three){
             $flag = true;
         }
         return $flag;

@@ -69,6 +69,6 @@ class TinyController extends Controller
 
         $tiny->save();
         Session::flash('message', 'Slides on the home page have been updated');
-        return view('admin_page.index');
+        return view('admin_page.admin_index.index');
     }
 }

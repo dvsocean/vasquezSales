@@ -43,8 +43,8 @@ $fpc = \App\FrontPageContent::find(1);
                         </div>
 
                         <div class="col-xs-12 col-sm-4 col-md-6 col-lg-6">
-                            <label>Main title:</label>
-                            <input type="text" class="form-control" name="main_title" placeholder="Enter home page title" value="{{$fpc->main_title}}">
+                            {{--<label>Main title:</label>--}}
+                            {{--<input type="text" class="form-control" name="main_title" placeholder="Enter home page title" value="{{$fpc->main_title}}">--}}
                         </div>
 
                         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
@@ -56,22 +56,22 @@ $fpc = \App\FrontPageContent::find(1);
                         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                             <br><br>
                             <label>Heading one:</label>
-                            <input type="text" name="heading_one" placeholder="insert heading one" value="{{$fpc->heading_one}}"/><br>
-                            <textarea name="body_one" class="form-control" rows="7" cols="250">{{$fpc->body_one}}</textarea>
+                            <input type="text" name="heading_one" placeholder="insert heading one" value="{{!empty($fpc->heading_one) ? $fpc->heading_one : 'REPLACE THIS TEXT'}}"/><br>
+                            <textarea name="body_one" class="form-control" rows="7" cols="250">{{!empty($fpc->body_one) ? $fpc->body_one : 'REPLACE THIS TEXT'}}</textarea>
                         </div>
 
                         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                             <br><br>
                             <label>Heading two:</label>
-                            <input type="text" name="heading_two" placeholder="insert heading two" value="{{$fpc->heading_two}}"/><br>
-                            <textarea name="body_two" class="form-control" rows="7" cols="250">{{$fpc->body_two}}</textarea>
+                            <input type="text" name="heading_two" placeholder="insert heading two" value="{{!empty($fpc->heading_two) ? $fpc->heading_two : 'REPLACE THIS TEXT'}}"/><br>
+                            <textarea name="body_two" class="form-control" rows="7" cols="250">{{!empty($fpc->body_two) ? $fpc->body_two : 'REPLACE THIS TEXT'}}</textarea>
                         </div>
 
                         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                             <br><br>
                             <label>Heading three:</label>
-                            <input type="text" name="heading_three" placeholder="insert heading three" value="{{$fpc->heading_three}}"/><br>
-                            <textarea name="body_three" class="form-control" rows="7" cols="250">{{$fpc->body_three}}</textarea>
+                            <input type="text" name="heading_three" placeholder="insert heading three" value="{{!empty($fpc->heading_three) ? $fpc->heading_three : 'REPLACE THIS TEXT'}}"/><br>
+                            <textarea name="body_three" class="form-control" rows="7" cols="250">{{!empty($fpc->body_three) ? $fpc->body_three : 'REPLACE THIS TEXT'}}</textarea>
                         </div>
                     </div>
 
