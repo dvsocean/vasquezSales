@@ -27,7 +27,7 @@ $user = Auth::user();
         <!-- Page Wrapper -->
         <div id="page-wrapper">
 
-            <!--NAV-->
+        <!--NAV-->
         @include('includes.nav_menu.nav')
         <!--NAV-->
             <br>
@@ -48,6 +48,30 @@ $user = Auth::user();
                     @include('includes.nav_menu.admin_page_left_nav')
                 </p>
             </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                        <p>
+                    <span class="image left">
+                        <img src="images/settings-cog.png"/>
+                    </span>
+                            Alter content at will. Customize the front page as you like. Everything from
+                            photos to text to buttons is at your finger tips.
+                        </p>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                        <!--PLACEHOLDER-->
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                        <!--PLACEHOLDER-->
+                    </div>
+                </div>
+            </div>
+
+
 
         </div>
 
