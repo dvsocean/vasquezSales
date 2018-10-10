@@ -256,7 +256,7 @@ $user = Auth::user();
         </div>
     </nav>
 
-    <!-- NAV END NAV END NAV END NAV END NAV END NAV END NAV END NAV END NAV END NAV END NAV END NAV END NAV END NAV END -->
+    <!-- NAV END NAV END NAV END NAV END NAV END NAV END NAV END NAV END NAV END NAV END NAV END NAV END NAV END -->
 
     <div id="page-wrapper">
         <div class="row">
