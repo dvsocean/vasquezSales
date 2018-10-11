@@ -182,7 +182,10 @@ $user = Auth::user();
                         <a href="{{route('quad_content')}}" class="side_nav"><i class="fa fa-th-large fa-fw"></i> Quad content</a>
                     </li>
                     <li>
-                        <a href="{{route('editButtons')}}" class="side_nav"><i class="fa fa-font fa-fw"></i> Button labels</a>
+                        <a href="{{route('editButtons')}}" class="side_nav"><i class="fa fa-home fa-fw"></i> Home buttons/icons</a>
+                    </li>
+                    <li>
+                        <a href="#" class="side_nav"><i class="fa fa-user fa-fw"></i> Profile buttons</a>
                     </li>
                 </ul>
             </div>
