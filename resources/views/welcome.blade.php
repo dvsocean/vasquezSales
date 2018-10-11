@@ -59,6 +59,10 @@
 				@include('includes.home_page_slideshow.slideshow')
 				<!--CUSTOM SLIDESHOW-->
 
+				<!--CUSTOM BUTTONS-->
+				@include('includes.custom_home_page_buttons.custom_buttons')
+				<!--CUSTOM BUTTONS-->
+
 				<!-- Wrapper -->
 					<div id="wrapper">
 						<!-- One -->
