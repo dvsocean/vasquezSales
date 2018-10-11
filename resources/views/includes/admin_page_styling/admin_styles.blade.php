@@ -9,11 +9,11 @@
 
 <style>
     #nav-top {
-        background-color: #adb5bd;
+        background-color: #dadada;
     }
 
     #drop-top {
-        background-color: #adb5bd;
+        background-color: #dadada;
         color: #0f0f0f;
     }
 
@@ -22,7 +22,7 @@
     }
 
     #drop-bell {
-        background-color: #adb5bd;
+        background-color: #dadada;
         color: #0f0f0f;
     }
 
@@ -31,11 +31,18 @@
     }
 
     #top-home {
-        background-color: #adb5bd;
+        background-color: #dadada;
         color: #0f0f0f;
     }
 
     #top-home:hover {
+        color: white;
+    }
+
+    .side_nav {
+        color: #000;
+    }
+    .side_nav:hover {
         color: white;
     }
 </style>
