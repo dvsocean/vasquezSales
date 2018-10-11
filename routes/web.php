@@ -55,3 +55,8 @@ Route::get('/editSliders', function(){
     return view('admin_page.slider_images.slider_images');
 })->name('editSliders');
 Route::post('/updateSliderImages', 'TinyController@updateSliders');
+
+//edit buttons
+Route::get('/editButtons', function(){
+    return view('admin_page.buttons.buttons');
+})->name('editButtons');
