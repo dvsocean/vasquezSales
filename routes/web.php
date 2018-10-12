@@ -79,3 +79,6 @@ Route::get('/cat_button_three', function(){
 Route::get('/cat_button_four', function(){
     return view('home_page_categories.cat_four');
 });
+
+//Multiple routes for Bicons route
+Route::post('/updateBicons', 'BiconController@update');

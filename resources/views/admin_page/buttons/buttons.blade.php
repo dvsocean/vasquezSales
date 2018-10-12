@@ -10,6 +10,7 @@
 use Illuminate\Support\Facades\Auth;
 $signedIn = Auth::check();
 $user = Auth::user();
+$bicons = \App\FrontpageBicons::find(1);
 ?>
 
 @if($signedIn)
@@ -35,30 +36,31 @@ $user = Auth::user();
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                 <h3>Home page buttons:</h3>
-                <form action="#" method="POST">
+                <form action="/updateBicons" method="POST">
+                    {{csrf_field()}}
                     <div class="well">
                         <label>Category button one:</label>
-                        <input type="text" name="category_button_one" placeholder="Enter button text">
+                        <input type="text" value="{{!empty($bicons->cat_button_one) ? $bicons->cat_button_one : 'Category one..replace with text'}}" name="category_button_one">
 
                         <br><br>
 
                         <label>Category button two:</label>
-                        <input type="text" name="category_button_two" placeholder="Enter button text">
+                        <input type="text" value="{{!empty($bicons->cat_button_two) ? $bicons->cat_button_two : 'Category two..replace with text'}}" name="category_button_two">
 
                         <br><br>
 
                         <label>Category button three:</label>
-                        <input type="text" name="category_button_three" placeholder="Enter button text">
+                        <input type="text" value="{{!empty($bicons->cat_button_three) ? $bicons->cat_button_three : 'Category three..replace with text'}}" name="category_button_three">
 
                         <br><br>
 
                         <label>Category button four:</label>
-                        <input type="text" name="category_button_four" placeholder="Enter button text">
+                        <input type="text" value="{{!empty($bicons->cat_button_four) ? $bicons->cat_button_four : 'Category four..replace with text'}}" name="category_button_four">
 
                         <br><br>
 
                         <label>Footer button text:</label>
-                        <input type="text" name="footer_button" placeholder="Enter button text">
+                        <input type="text" value="{{!empty($bicons->footer_button) ? $bicons->footer_button : 'Footer button..replace with text'}}" name="footer_button">
                     </div>
                     <input type="submit" name="submit" value="update" class="form-control">
                 </form>

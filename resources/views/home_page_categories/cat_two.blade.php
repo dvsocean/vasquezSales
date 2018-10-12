@@ -10,6 +10,7 @@
 use Illuminate\Support\Facades\Auth;
 $signedIn = Auth::check();
 $user = Auth::user();
+$bicons = \App\FrontpageBicons::find(1);
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -26,7 +27,7 @@ $user = Auth::user();
 @include('includes.nav_menu.nav')
 <!--NAV-->
     <br>
-    <h1 class="text-center">Flatbeds</h1>
+    <h1 class="text-center">{{!empty($bicons->cat_button_two) ? $bicons->cat_button_two : 'Category two'}}</h1>
 
     <div class="text-center">
         <div class="container">
