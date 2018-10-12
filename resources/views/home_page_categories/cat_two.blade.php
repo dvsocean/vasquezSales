@@ -11,9 +11,7 @@ use Illuminate\Support\Facades\Auth;
 $signedIn = Auth::check();
 $user = Auth::user();
 ?>
-
-@if($signedIn)
-        <!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html>
 <title>Flatbeds</title>
 <!--HEADER-->
@@ -48,14 +46,8 @@ $user = Auth::user();
         </div>
     </div>
 </div>
-
 <!--FOOTER-->
 @include('includes.header_footer.footer')
 <!--FOOTER-->
-
-
 </body>
 </html>
-@else
-    @include('includes.error_page.index')
-@endif

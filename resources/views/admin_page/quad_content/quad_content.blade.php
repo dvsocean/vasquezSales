@@ -44,9 +44,9 @@ $fpc = \App\FrontPageContent::find(1);
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                <label>Quad title:</label>
-                <input class="form-control" type="text" name="quad_title" placeholder="Enter title" value="{{$fpc->quad_title}}"/><br>
-                <br><br>
+                {{--<label>Quad title:</label>--}}
+                {{--<input class="form-control" type="text" name="quad_title" placeholder="Enter title" value="{{$fpc->quad_title}}"/><br>--}}
+                {{--<br><br>--}}
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
@@ -57,15 +57,15 @@ $fpc = \App\FrontPageContent::find(1);
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                 <label>Quad one:</label>
-                <input class="form-control" type="text" name="quad_heading_one" placeholder="Enter heading" value="{{$fpc->quad_heading_one}}"/><br>
-                <textarea class="form-control" name="quad_body_one" rows="7">{{$fpc->quad_body_one}}</textarea>
+                <input class="form-control" type="text" name="quad_heading_one" placeholder="Enter heading" value="{{!empty($fpc->quad_heading_one) ? $fpc->quad_heading_one : 'REPLACE THIS TEXT'}}"/><br>
+                <textarea class="form-control" name="quad_body_one" rows="7">{{!empty($fpc->quad_body_one) ? $fpc->quad_body_one : 'REPLACE THIS TEXT'}}</textarea>
                 <br><br>
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                 <label>Quad two:</label>
-                <input class="form-control" type="text" name="quad_heading_two" placeholder="Enter heading" value="{{$fpc->quad_heading_two}}"/><br>
-                <textarea class="form-control" name="quad_body_two" rows="7">{{$fpc->quad_body_two}}</textarea>
+                <input class="form-control" type="text" name="quad_heading_two" placeholder="Enter heading" value="{{!empty($fpc->quad_heading_two) ? $fpc->quad_heading_two : 'REPLACE THIS TEXT'}}"/><br>
+                <textarea class="form-control" name="quad_body_two" rows="7">{{!empty($fpc->quad_body_two) ? $fpc->quad_body_two : 'REPLACE THIS TEXT'}}</textarea>
                 <br><br>
             </div>
         </div>
@@ -73,15 +73,15 @@ $fpc = \App\FrontPageContent::find(1);
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                 <label>Quad three:</label>
-                <input class="form-control" type="text" name="quad_heading_three" placeholder="Enter heading" value="{{$fpc->quad_heading_three}}"/><br>
-                <textarea class="form-control" name="quad_body_three" rows="7">{{$fpc->quad_body_three}}</textarea>
+                <input class="form-control" type="text" name="quad_heading_three" placeholder="Enter heading" value="{{!empty($fpc->quad_heading_three) ? $fpc->quad_heading_three : 'REPLACE THIS TEXT'}}"/><br>
+                <textarea class="form-control" name="quad_body_three" rows="7">{{!empty($fpc->quad_body_three) ? $fpc->quad_body_three : 'REPLACE THIS TEXT'}}</textarea>
                 <br><br>
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                 <label>Quad four:</label>
-                <input class="form-control" type="text" name="quad_heading_four" placeholder="Enter heading" value="{{$fpc->quad_heading_four}}"/><br>
-                <textarea class="form-control" name="quad_body_four" rows="7">{{$fpc->quad_body_four}}</textarea>
+                <input class="form-control" type="text" name="quad_heading_four" placeholder="Enter heading" value="{{!empty($fpc->quad_heading_four) ? $fpc->quad_heading_four : 'REPLACE THIS TEXT'}}"/><br>
+                <textarea class="form-control" name="quad_body_four" rows="7">{{!empty($fpc->quad_body_four) ? $fpc->quad_body_four : 'REPLACE THIS TEXT'}}</textarea>
                 <br><br>
             </div>
         </div>
@@ -93,7 +93,7 @@ $fpc = \App\FrontPageContent::find(1);
 
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                 <label>Footer title:</label>
-                <input type="text" name="footer_title" placeholder="Enter footer title" value="{{$fpc->footer_title}}" class="form-control"/>
+                <input type="text" name="footer_title" placeholder="Enter footer title" value="{{!empty($fpc->footer_title) ? $fpc->footer_title : 'REPLACE THIS TEXT'}}" class="form-control"/>
                 <br><br>
             </div>
 
