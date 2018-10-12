@@ -60,3 +60,22 @@ Route::post('/updateSliderImages', 'TinyController@updateSliders');
 Route::get('/editButtons', function(){
     return view('admin_page.buttons.buttons');
 })->name('editButtons');
+
+
+
+//category buttons
+Route::get('/cat_button_one', function(){
+    return view('home_page_categories.cat_one');
+});
+
+Route::get('/cat_button_two', function(){
+    return view('home_page_categories.cat_two');
+});
+
+Route::get('/cat_button_three', function(){
+    return view('home_page_categories.cat_three');
+});
+
+Route::get('/cat_button_four', function(){
+    return view('home_page_categories.cat_four');
+});
