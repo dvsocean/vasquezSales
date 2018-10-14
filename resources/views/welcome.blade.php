@@ -5,6 +5,7 @@
 	$user = Auth::user();
 	$fpc = App\FrontPageContent::find(1);
 	$tiny = App\TinyImages::find(1);
+	$bicon = \App\FrontpageBicons::find(1);
 	?>
 	<!--HEADER-->
 	@include('includes.header_footer.header')
@@ -168,7 +169,7 @@
 										{{!empty($fpc->footer_title) ? $fpc->footer_title : 'REPLACE THIS TEXT'}}
 									</p>
 									<ul class="actions vertical">
-										<li><a href="#" class="button big">Learn More</a></li>
+										<li><a href="#" class="button big">{{$bicon->footer_button}}</a></li>
 									</ul>
 								</div>
 							</section>
