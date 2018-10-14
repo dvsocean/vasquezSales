@@ -203,6 +203,9 @@ $user = Auth::user();
         </div>
         <!-- /.row -->
         <div class="row">
+            <!-- INFO MESSAGE BAR -->
+            @include('includes.info_message_flash_bar.index')
+            <!-- INFO MESSAGE BAR -->
             <div class="col-lg-3 col-md-6">
                 <div class="panel panel-primary">
                     <div class="panel-heading">

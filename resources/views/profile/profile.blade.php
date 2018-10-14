@@ -38,7 +38,7 @@ $user = Auth::user();
                 {{ csrf_field() }}
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    @include('includes.error_messages.index')
+                    @include('includes.info_message_flash_bar.index')
                     <h1 class="text-center">{{$user->name}}'s Profile</h1>
                 </div>
             </div>

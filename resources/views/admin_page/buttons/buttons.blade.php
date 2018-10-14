@@ -40,27 +40,27 @@ $bicons = \App\FrontpageBicons::find(1);
                     {{csrf_field()}}
                     <div class="well">
                         <label>Category button one:</label>
-                        <input type="text" value="{{!empty($bicons->cat_button_one) ? $bicons->cat_button_one : 'Category one..replace with text'}}" name="category_button_one">
+                        <input type="text" value="{{!empty($bicons->cat_button_one) ? $bicons->cat_button_one : 'Category one'}}" name="category_button_one">
 
                         <br><br>
 
                         <label>Category button two:</label>
-                        <input type="text" value="{{!empty($bicons->cat_button_two) ? $bicons->cat_button_two : 'Category two..replace with text'}}" name="category_button_two">
+                        <input type="text" value="{{!empty($bicons->cat_button_two) ? $bicons->cat_button_two : 'Category two'}}" name="category_button_two">
 
                         <br><br>
 
                         <label>Category button three:</label>
-                        <input type="text" value="{{!empty($bicons->cat_button_three) ? $bicons->cat_button_three : 'Category three..replace with text'}}" name="category_button_three">
+                        <input type="text" value="{{!empty($bicons->cat_button_three) ? $bicons->cat_button_three : 'Category three'}}" name="category_button_three">
 
                         <br><br>
 
                         <label>Category button four:</label>
-                        <input type="text" value="{{!empty($bicons->cat_button_four) ? $bicons->cat_button_four : 'Category four..replace with text'}}" name="category_button_four">
+                        <input type="text" value="{{!empty($bicons->cat_button_four) ? $bicons->cat_button_four : 'Category four'}}" name="category_button_four">
 
                         <br><br>
 
                         <label>Footer button text:</label>
-                        <input type="text" value="{{!empty($bicons->footer_button) ? $bicons->footer_button : 'Footer button..replace with text'}}" name="footer_button">
+                        <input type="text" value="{{!empty($bicons->footer_button) ? $bicons->footer_button : 'Footer button'}}" name="footer_button">
                     </div>
                     <input type="submit" name="submit" value="update" class="form-control">
                 </form>
