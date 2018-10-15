@@ -2195,8 +2195,8 @@
 	input[type="email"],
 	select,
 	textarea {
-		background: rgba(144, 144, 144, 0.075);
-		border-color: #eaeaea;
+		/*background: rgba(144, 144, 144, 0.075);*/
+		/*border-color: #eaeaea;*/
 	}
 
     /*MAIN FOCUS*/

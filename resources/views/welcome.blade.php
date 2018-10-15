@@ -6,6 +6,7 @@
 	$fpc = App\FrontPageContent::find(1);
 	$tiny = App\TinyImages::find(1);
 	$bicon = \App\FrontpageBicons::find(1);
+	$monitor = \App\MonitorImages::find(1);
 	?>
 	<!--HEADER-->
 	@include('includes.header_footer.header')
@@ -81,7 +82,7 @@
 										replace the image below with a JPEG or PNG. Just make sure it's exactly
 										320x340 or at least the same aspect ratio (16:17).
 									-->
-									<span class="image"><img src="images/performance.png" alt="" /></span>
+									<span class="image"><img src="{{!empty($monitor->image_one) ? $monitor->image_one : 'images/default/performance.png'}}" alt="" /></span>
 								</div>
 							</section>
 
@@ -100,7 +101,7 @@
 										Note: You can replace the image below with a JPEG or PNG. Just make sure it's exactly
 										320x340 or at least the same aspect ratio (16:17).
 									-->
-									<span class="image"><img src="images/dollar.png" alt="" /></span>
+									<span class="image"><img src="{{!empty($monitor->image_two) ? $monitor->image_two : 'images/default/dollar.png'}}" alt="" /></span>
 								</div>
 							</section>
 
@@ -119,7 +120,7 @@
 										Note: You can replace the image below with a JPEG or PNG. Just make sure it's exactly
 										320x340 or at least the same aspect ratio (16:17).
 									-->
-									<span class="image"><img src="images/repair.png" alt="" /></span>
+									<span class="image"><img src="{{!empty($monitor->image_three) ? $monitor->image_three : 'images/default/repair.png'}}" alt="" /></span>
 								</div>
 							</section>
 
@@ -169,7 +170,7 @@
 										{{!empty($fpc->footer_title) ? $fpc->footer_title : 'REPLACE THIS TEXT'}}
 									</p>
 									<ul class="actions vertical">
-										<li><a href="#" class="button big">{{$bicon->footer_button}}</a></li>
+										<li><a href="#" class="button big">{{!empty($bicon->footer_button) ? $bicon->footer_button : 'REPLACE'}}</a></li>
 									</ul>
 								</div>
 							</section>

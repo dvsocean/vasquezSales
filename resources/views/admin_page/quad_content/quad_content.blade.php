@@ -18,7 +18,7 @@ $fpc = \App\FrontPageContent::find(1);
 @if($signedIn)
         <!DOCTYPE HTML>
 <html>
-<title>Administrator</title>
+<title>Edit quad content</title>
 <!--HEADER-->
 @include('includes.header_footer.header')
 <!--HEADER-->
@@ -44,9 +44,9 @@ $fpc = \App\FrontPageContent::find(1);
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                {{--<label>Quad title:</label>--}}
-                {{--<input class="form-control" type="text" name="quad_title" placeholder="Enter title" value="{{$fpc->quad_title}}"/><br>--}}
-                {{--<br><br>--}}
+                <label>Quad title:</label>
+                <input class="form-control" type="text" name="quad_title" value="{{!empty($fpc->quad_title) ? $fpc->quad_title : 'REPLACE THIS TEXT'}}"/><br>
+                <br><br>
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">

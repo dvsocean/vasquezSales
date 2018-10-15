@@ -66,23 +66,25 @@ $bicons = \App\FrontpageBicons::find(1);
                 </form>
                 <br><br>
             </div>
-
-
+            
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                 <h3>Icons:</h3>
                 <form action="#" method="POST"enctype="multipart/form-data">
                     <div class="well">
                         <label>Monitor image 1:</label>
+                        <img src="{{!empty($monitor->image_one) ? $monitor->image_one : 'images/default/performance.png'}}" height="100" width="100">
                         <input type="file" name="monitor_image_one"/>
 
-                        <br><br>
+                        <br><br><br>
 
                         <label>Monitor image 2:</label>
+                        <img src="{{!empty($monitor->image_two) ? $monitor->image_two : 'images/default/dollar.png'}}" height="100" width="100">
                         <input type="file" name="monitor_image_two"/>
 
-                        <br><br>
+                        <br><br><br>
 
                         <label>Monitor image 3:</label>
+                        <img src="{{!empty($monitor->image_three) ? $monitor->image_three : 'images/default/repair.png'}}" height="100" width="100">
                         <input type="file" name="monitor_image_three"/>
                     </div>
                     <input type="submit" name="submit" value="update" class="form-control">
@@ -90,14 +92,18 @@ $bicons = \App\FrontpageBicons::find(1);
                 <br><br>
             </div>
 
-
-
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                 <h3>Quad icons(Font Awesome):</h3>
                 <form action="#" method="POST">
                     <div class="well">
                         <label>Quad icon one:</label>
-                        <input type="text" name="quad_icon_one" placeholder="enter icon name"/>
+                        <div class="select-wrapper">
+                            <select id="quad_icon_one">
+                                <option>BLA</option>
+                                <option>MORE BLA</option>
+                                <option>MOST BLA BLA</option>
+                            </select>
+                        </div>
 
                         <br><br>
 
