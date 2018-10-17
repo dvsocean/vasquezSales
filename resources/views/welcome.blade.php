@@ -7,6 +7,7 @@
 	$tiny = App\TinyImages::find(1);
 	$bicon = \App\FrontpageBicons::find(1);
 	$monitor = \App\MonitorImages::find(1);
+	$quads = \App\FrontPageQuads::find(1);
 	?>
 	<!--HEADER-->
 	@include('includes.header_footer.header')
@@ -132,28 +133,28 @@
 									</header>
 									<div class="features">
 										<section>
-											<span class="icon major fab fa-bluetooth style1"></span>
+											<span class="icon major fab {{!empty($quads->quad_one) ? $quads->quad_one : 'fa-camera'}} style1"></span>
 											<h3>{{!empty($fpc->quad_heading_one) ? $fpc->quad_heading_one : 'REPLACE THIS TEXT'}}</h3>
 											<p>
 												{{!empty($fpc->quad_body_one) ? $fpc->quad_body_one : 'REPLACE THIS TEXT'}}
 											</p>
 										</section>
 										<section>
-											<span class="icon major fas fa-align-left style2"></span>
+											<span class="icon major fas {{!empty($quads->quad_two) ? $quads->quad_two : 'fa-camera'}} style2"></span>
 											<h3>{{!empty($fpc->quad_heading_two) ? $fpc->quad_heading_two : 'REPLACE THIS TEXT'}}</h3>
 											<p>
 												{{!empty($fpc->quad_body_two) ? $fpc->quad_body_two : 'REPLACE THIS TEXT'}}
 											</p>
 										</section>
 										<section>
-											<span class="icon major fas fa-camera style3"></span>
+											<span class="icon major fas {{!empty($quads->quad_three) ? $quads->quad_three : 'fa-camera'}} style3"></span>
 											<h3>{{!empty($fpc->quad_heading_three) ? $fpc->quad_heading_three : 'REPLACE THIS TEXT'}}</h3>
 											<p>
 												{{!empty($fpc->quad_body_three) ? $fpc->quad_body_three : 'REPLACE THIS TEXT'}}
 											</p>
 										</section>
 										<section>
-											<span class="icon major fas fa-calculator style4"></span>
+											<span class="icon major fas {{!empty($quads->quad_four) ? $quads->quad_four : 'fa-camera'}} style4"></span>
 											<h3>{{!empty($fpc->quad_heading_four) ? $fpc->quad_heading_four : 'REPLACE THIS TEXT'}}</h3>
 											<p>
 												{{!empty($fpc->quad_body_four) ? $fpc->quad_body_four : 'REPLACE THIS TEXT'}}

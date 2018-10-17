@@ -101,7 +101,7 @@ $quads = \App\FrontPageQuads::find(1);
                         <label>Quad icon one:</label>
                         <div class="select-wrapper">
                             <select id="quad_one" name="quad_one">
-                                <option value="" selected>Make your selection</option>
+                                <option value="{{!empty($quads->quad_one) ? $quads->quad_one : 'REPLACE'}}" selected>{{$quads->iconNameMatcher($quads->quad_one)}} <--Selected</option>
                                 <option value="fa-calculator">Calculator</option>
                                 <option value="fa-camera">Camera</option>
                                 <option value="fa-align-left">Align left</option>
@@ -119,12 +119,12 @@ $quads = \App\FrontPageQuads::find(1);
                             {{--{!! Form::close() !!}--}}
                         {{--</div>--}}
 
-
                         <br><br>
 
                         <label>Quad icon two:</label>
                         <div class="select-wrapper">
                             <select id="quad_two" name="quad_two">
+                                <option value="{{!empty($quads->quad_two) ? $quads->quad_two : 'REPLACE'}}" selected>{{$quads->iconNameMatcher($quads->quad_two)}} <--Selected</option>
                                 <option value="fa-calculator">Calculator</option>
                                 <option value="fa-camera">Camera</option>
                                 <option value="fa-align-left">Align left</option>
@@ -137,6 +137,7 @@ $quads = \App\FrontPageQuads::find(1);
                         <label>Quad icon three:</label>
                         <div class="select-wrapper">
                             <select id="quad_three" name="quad_three">
+                                <option value="{{!empty($quads->quad_three) ? $quads->quad_three : 'REPLACE'}}" selected>{{$quads->iconNameMatcher($quads->quad_three)}} <--Selected</option>
                                 <option value="fa-calculator">Calculator</option>
                                 <option value="fa-camera">Camera</option>
                                 <option value="fa-align-left">Align left</option>
@@ -149,6 +150,7 @@ $quads = \App\FrontPageQuads::find(1);
                         <label>Quad icon four:</label>
                         <div class="select-wrapper">
                             <select id="quad_four" name="quad_four">
+                                <option value="{{!empty($quads->quad_four) ? $quads->quad_four : 'REPLACE'}}" selected>{{$quads->iconNameMatcher($quads->quad_four)}} <--Selected</option>
                                 <option value="fa-calculator">Calculator</option>
                                 <option value="fa-camera">Camera</option>
                                 <option value="fa-align-left">Align left</option>
