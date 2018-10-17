@@ -27,8 +27,8 @@ $quads = \App\FrontPageQuads::find(1);
 <div id="page-wrapper">
 
     <!--NAV-->
-@include('includes.nav_menu.nav')
-<!--NAV-->
+    @include('includes.nav_menu.nav')
+    <!--NAV-->
     <br>
     <h1 class="text-center">Edit home page button text and icons</h1>
     <br>
@@ -38,7 +38,7 @@ $quads = \App\FrontPageQuads::find(1);
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                 <h3>Home page buttons:</h3>
                 <form action="/updateBicons" method="POST">
-                    {{csrf_field()}}
+                    {{ csrf_field() }}
                     <div class="well">
                         <label>Category button one:</label>
                         <input type="text" value="{{!empty($bicons->cat_button_one) ? $bicons->cat_button_one : 'Category one'}}" name="category_button_one">
@@ -109,16 +109,6 @@ $quads = \App\FrontPageQuads::find(1);
                             </select>
                         </div>
 
-                        {{--<div class="select-wrapper">--}}
-                            {{--{!! Form::model(['method'=> 'POST', 'url'=>['/quads']]) !!}--}}
-
-
-                            {{--{!! Form::select('quad_one', ['L' => 'Large', 'S' => 'Small', 'M'=>'JACKSON HEWITT'], 'S'); !!}--}}
-
-                            {{--{!! Form::submit('Click Me!'); !!}--}}
-                            {{--{!! Form::close() !!}--}}
-                        {{--</div>--}}
-
                         <br><br>
 
                         <label>Quad icon two:</label>
@@ -168,7 +158,6 @@ $quads = \App\FrontPageQuads::find(1);
 <!--FOOTER-->
 @include('includes.header_footer.footer')
 <!--FOOTER-->
-
 
 </body>
 </html>

@@ -15,7 +15,7 @@ class BiconController extends Controller
             $bicons = FrontpageBicons::create(['cat_button_one'=>'', 'cat_button_two'=>'', 'cat_button_three'=>'', 'cat_button_four'=>'', 'footer_button'=>'']);
         }
 
-        if($this->isBiconModified($request)){
+        if(!$this->isBiconModified($request)){
             if ($request->has('category_button_one')) {
                 $bicons->cat_button_one = $request->category_button_one;
             }
@@ -45,18 +45,12 @@ class BiconController extends Controller
     }
 
     public function isBiconModified($data){
-        $bicons = null;
-        if(FrontpageBicons::find(1)){
-            $bicons = FrontpageBicons::find(1);
-        }
+        $bicons = FrontpageBicons::find(1);
         $flag = true;
-
         if($bicons->cat_button_one == $data->category_button_one && $bicons->cat_button_two == $data->category_button_two
         && $bicons->cat_button_three == $data->category_button_three && $bicons->cat_button_four == $data->category_button_four){
             $flag = false;
         }
         return $flag;
     }
-
-
 }
