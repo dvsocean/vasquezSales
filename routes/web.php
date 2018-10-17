@@ -82,3 +82,5 @@ Route::get('/cat_button_four', function(){
 
 //Multiple routes for Bicons route
 Route::post('/updateBicons', 'BiconController@update');
+
+Route::post('/quads', 'QuadController@updateQuadIcons');

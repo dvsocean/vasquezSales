@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 $signedIn = Auth::check();
 $user = Auth::user();
 $bicons = \App\FrontpageBicons::find(1);
+$quads = \App\FrontPageQuads::find(1);
 ?>
 
 @if($signedIn)
@@ -94,33 +95,68 @@ $bicons = \App\FrontpageBicons::find(1);
 
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                 <h3>Quad icons(Font Awesome):</h3>
-                <form action="#" method="POST">
+                <form action="/quads" method="POST">
+                    {{ csrf_field() }}
                     <div class="well">
                         <label>Quad icon one:</label>
                         <div class="select-wrapper">
-                            <select id="quad_icon_one">
-                                <option>BLA</option>
-                                <option>MORE BLA</option>
-                                <option>MOST BLA BLA</option>
+                            <select id="quad_one" name="quad_one">
+                                <option value="" selected>Make your selection</option>
+                                <option value="fa-calculator">Calculator</option>
+                                <option value="fa-camera">Camera</option>
+                                <option value="fa-align-left">Align left</option>
+                                <option value="fa-bluetooth">Bluetooth</option>
+                            </select>
+                        </div>
+
+                        {{--<div class="select-wrapper">--}}
+                            {{--{!! Form::model(['method'=> 'POST', 'url'=>['/quads']]) !!}--}}
+
+
+                            {{--{!! Form::select('quad_one', ['L' => 'Large', 'S' => 'Small', 'M'=>'JACKSON HEWITT'], 'S'); !!}--}}
+
+                            {{--{!! Form::submit('Click Me!'); !!}--}}
+                            {{--{!! Form::close() !!}--}}
+                        {{--</div>--}}
+
+
+                        <br><br>
+
+                        <label>Quad icon two:</label>
+                        <div class="select-wrapper">
+                            <select id="quad_two" name="quad_two">
+                                <option value="fa-calculator">Calculator</option>
+                                <option value="fa-camera">Camera</option>
+                                <option value="fa-align-left">Align left</option>
+                                <option value="fa-bluetooth">Bluetooth</option>
                             </select>
                         </div>
 
                         <br><br>
 
-                        <label>Quad icon two:</label>
-                        <input type="text" name="quad_icon_two" placeholder="enter icon name"/>
-
-                        <br><br>
-
                         <label>Quad icon three:</label>
-                        <input type="text" name="quad_icon_three" placeholder="enter icon name"/>
+                        <div class="select-wrapper">
+                            <select id="quad_three" name="quad_three">
+                                <option value="fa-calculator">Calculator</option>
+                                <option value="fa-camera">Camera</option>
+                                <option value="fa-align-left">Align left</option>
+                                <option value="fa-bluetooth">Bluetooth</option>
+                            </select>
+                        </div>
 
                         <br><br>
 
                         <label>Quad icon four:</label>
-                        <input type="text" name="quad_icon_four" placeholder="enter icon name"/>
+                        <div class="select-wrapper">
+                            <select id="quad_four" name="quad_four">
+                                <option value="fa-calculator">Calculator</option>
+                                <option value="fa-camera">Camera</option>
+                                <option value="fa-align-left">Align left</option>
+                                <option value="fa-bluetooth">Bluetooth</option>
+                            </select>
+                        </div>
                     </div>
-                    <input type="submit" name="submit" value="update" class="form-control">
+                    <input type="submit" name="submit_button" value="update" class="form-control">
                 </form>
             </div>
         </div>
