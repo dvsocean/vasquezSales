@@ -86,13 +86,13 @@ $monitor = \App\MonitorImages::find(1);
                         <br><br><br>
 
                         <label>Monitor image 2:</label>
-                        <img src="{{!empty($monitor->image_two) ? $monitor->image_two : 'monitor_images/default/dollar.png'}}" height="100" width="100">
+                        <img src="{{!empty($monitor->image_two) ? 'monitor_images/' . $monitor->image_two : 'monitor_images/default/dollar.png'}}" height="100" width="100">
                         <input type="file" name="monitor_image_two"/>
 
                         <br><br><br>
 
                         <label>Monitor image 3:</label>
-                        <img src="{{!empty($monitor->image_three) ? $monitor->image_three : 'monitor_images/default/repair.png'}}" height="100" width="100">
+                        <img src="{{!empty($monitor->image_three) ? 'monitor_images/' . $monitor->image_three : 'monitor_images/default/repair.png'}}" height="100" width="100">
                         <input type="file" name="monitor_image_three"/>
                     </div>
                     <input type="submit" name="submit" value="update" class="form-control">
@@ -116,7 +116,7 @@ $monitor = \App\MonitorImages::find(1);
                         <label>Quad icon one:</label>
                         <div class="select-wrapper">
                             <select id="quad_one" name="quad_one">
-                                <option value="{{!empty($quads->quad_one) ? $quads->quad_one : 'REPLACE'}}" selected>{{$quads->iconNameMatcher($quads->quad_one)}}</option>
+                                <option value="{{!empty($quads->quad_one) ? $quads->quad_one : 'REPLACE'}}" selected>{{!empty($quads->quad_one) ? $quads->iconNameMatcher($quads->quad_one) : 'PENDING DATABASE'}}</option>
                                 <option value="fa-calculator">Calculator</option>
                                 <option value="fa-camera">Camera</option>
                                 <option value="fa-align-left">Align left</option>
@@ -139,7 +139,7 @@ $monitor = \App\MonitorImages::find(1);
                         <label>Quad icon two:</label>
                         <div class="select-wrapper">
                             <select id="quad_two" name="quad_two">
-                                <option value="{{!empty($quads->quad_two) ? $quads->quad_two : 'REPLACE'}}" selected>{{$quads->iconNameMatcher($quads->quad_two)}}</option>
+                                <option value="{{!empty($quads->quad_two) ? $quads->quad_two : 'REPLACE'}}" selected>{{!empty($quads->quad_two) ? $quads->iconNameMatcher($quads->quad_two) : 'PENDING DATABASE'}}</option>
                                 <option value="fa-calculator">Calculator</option>
                                 <option value="fa-camera">Camera</option>
                                 <option value="fa-align-left">Align left</option>
@@ -162,7 +162,7 @@ $monitor = \App\MonitorImages::find(1);
                         <label>Quad icon three:</label>
                         <div class="select-wrapper">
                             <select id="quad_three" name="quad_three">
-                                <option value="{{!empty($quads->quad_three) ? $quads->quad_three : 'REPLACE'}}" selected>{{$quads->iconNameMatcher($quads->quad_three)}}</option>
+                                <option value="{{!empty($quads->quad_three) ? $quads->quad_three : 'REPLACE'}}" selected>{{!empty($quads->quad_three) ? $quads->iconNameMatcher($quads->quad_three) : 'PENDING DATABASE'}}</option>
                                 <option value="fa-calculator">Calculator</option>
                                 <option value="fa-camera">Camera</option>
                                 <option value="fa-align-left">Align left</option>
@@ -185,7 +185,7 @@ $monitor = \App\MonitorImages::find(1);
                         <label>Quad icon four:</label>
                         <div class="select-wrapper">
                             <select id="quad_four" name="quad_four">
-                                <option value="{{!empty($quads->quad_four) ? $quads->quad_four : 'REPLACE'}}" selected>{{$quads->iconNameMatcher($quads->quad_four)}}</option>
+                                <option value="{{!empty($quads->quad_four) ? $quads->quad_four : 'REPLACE'}}" selected>{{!empty($quads->quad_four) ? $quads->iconNameMatcher($quads->quad_four) : 'PENDING DATABASE'}}</option>
                                 <option value="fa-calculator">Calculator</option>
                                 <option value="fa-camera">Camera</option>
                                 <option value="fa-align-left">Align left</option>
