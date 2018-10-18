@@ -13,22 +13,22 @@ class FrontPageController extends Controller
             $fpc = FrontPageContent::find(1);
         } else {
             $fpc = FrontPageContent::create(['heading_one'=>'', 'body_one'=>'', 'heading_two'=>'', 'heading_three'=>'']);
+            Session::flash('message', 'Database row has been created, please re-enter and submit data again');
         }
 
-        if(!$this->isContentModified($request)){
-            Session::flash('message', 'No content modifications made');
-            return view('admin_page.admin_index.index');
-        } else {
+        if($this->isContentModified($request)){
             $fpc->heading_one = $request->heading_one;
             $fpc->body_one = $request->body_one;
             $fpc->heading_two = $request->heading_two;
             $fpc->body_two = $request->body_two;
             $fpc->heading_three = $request->heading_three;
             $fpc->body_three = $request->body_three;
-            $fpc->save();
-            Session::flash('message', 'You have successfully updated content on the front page');
-            return view('admin_page.admin_index.index');
+        } else {
+            Session::flash('message', 'No content modifications made');
         }
+        $fpc->save();
+        Session::flash('message', 'You have successfully updated content on the front page');
+        return view('admin_page.admin_index.index');
     }
 
     public function updateQuadContent(Request $request){

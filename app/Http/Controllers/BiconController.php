@@ -15,7 +15,7 @@ class BiconController extends Controller
             $bicons = FrontpageBicons::create(['cat_button_one'=>'', 'cat_button_two'=>'', 'cat_button_three'=>'', 'cat_button_four'=>'', 'footer_button'=>'']);
         }
 
-        if(!$this->isBiconModified($request)){
+        if($this->isBiconModified($request)){
             if ($request->has('category_button_one')) {
                 $bicons->cat_button_one = $request->category_button_one;
             }
