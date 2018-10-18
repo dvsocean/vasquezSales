@@ -12,6 +12,7 @@ $signedIn = Auth::check();
 $user = Auth::user();
 $bicons = \App\FrontpageBicons::find(1);
 $quads = \App\FrontPageQuads::find(1);
+$monitor = \App\MonitorImages::find(1);
 ?>
 
 @if($signedIn)
@@ -67,31 +68,45 @@ $quads = \App\FrontPageQuads::find(1);
                 </form>
                 <br><br>
             </div>
+
+
+
+
+
             
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                 <h3>Icons:</h3>
-                <form action="#" method="POST"enctype="multipart/form-data">
+                <form action="/monitors" method="POST"enctype="multipart/form-data">
+                    {{ csrf_field() }}
                     <div class="well">
                         <label>Monitor image 1:</label>
-                        <img src="{{!empty($monitor->image_one) ? $monitor->image_one : 'images/default/performance.png'}}" height="100" width="100">
+                        <img src="{{!empty($monitor->image_one) ? 'monitor_images/' . $monitor->image_one : 'monitor_images/default/performance.png'}}" height="100" width="100">
                         <input type="file" name="monitor_image_one"/>
 
                         <br><br><br>
 
                         <label>Monitor image 2:</label>
-                        <img src="{{!empty($monitor->image_two) ? $monitor->image_two : 'images/default/dollar.png'}}" height="100" width="100">
+                        <img src="{{!empty($monitor->image_two) ? $monitor->image_two : 'monitor_images/default/dollar.png'}}" height="100" width="100">
                         <input type="file" name="monitor_image_two"/>
 
                         <br><br><br>
 
                         <label>Monitor image 3:</label>
-                        <img src="{{!empty($monitor->image_three) ? $monitor->image_three : 'images/default/repair.png'}}" height="100" width="100">
+                        <img src="{{!empty($monitor->image_three) ? $monitor->image_three : 'monitor_images/default/repair.png'}}" height="100" width="100">
                         <input type="file" name="monitor_image_three"/>
                     </div>
                     <input type="submit" name="submit" value="update" class="form-control">
                 </form>
                 <br><br>
             </div>
+
+
+
+
+
+
+
+
 
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                 <h3>Quad icons(Font Awesome):</h3>
@@ -101,11 +116,21 @@ $quads = \App\FrontPageQuads::find(1);
                         <label>Quad icon one:</label>
                         <div class="select-wrapper">
                             <select id="quad_one" name="quad_one">
-                                <option value="{{!empty($quads->quad_one) ? $quads->quad_one : 'REPLACE'}}" selected>{{$quads->iconNameMatcher($quads->quad_one)}} <--Selected</option>
+                                <option value="{{!empty($quads->quad_one) ? $quads->quad_one : 'REPLACE'}}" selected>{{$quads->iconNameMatcher($quads->quad_one)}}</option>
                                 <option value="fa-calculator">Calculator</option>
                                 <option value="fa-camera">Camera</option>
                                 <option value="fa-align-left">Align left</option>
                                 <option value="fa-bluetooth">Bluetooth</option>
+                                <option value="fa-car">Car</option>
+                                <option value="fa fa-battery-quarter">Cell Battery</option>
+                                <option value="fa fa-university">University</option>
+                                <option value="fa fa-binoculars">Binoculars</option>
+                                <option value="fa fa-beer">Beer</option>
+                                <option value="fa fa-cloud-download">Download</option>
+                                <option value="fa fa-cutlery">Cutlery</option>
+                                <option value="fa fa-motorcycle">Motorcycle</option>
+                                <option value="fa fa-road">Road</option>
+                                <option value="fa fa-suitcase">Suitcase</option>
                             </select>
                         </div>
 
@@ -114,11 +139,21 @@ $quads = \App\FrontPageQuads::find(1);
                         <label>Quad icon two:</label>
                         <div class="select-wrapper">
                             <select id="quad_two" name="quad_two">
-                                <option value="{{!empty($quads->quad_two) ? $quads->quad_two : 'REPLACE'}}" selected>{{$quads->iconNameMatcher($quads->quad_two)}} <--Selected</option>
+                                <option value="{{!empty($quads->quad_two) ? $quads->quad_two : 'REPLACE'}}" selected>{{$quads->iconNameMatcher($quads->quad_two)}}</option>
                                 <option value="fa-calculator">Calculator</option>
                                 <option value="fa-camera">Camera</option>
                                 <option value="fa-align-left">Align left</option>
                                 <option value="fa-bluetooth">Bluetooth</option>
+                                <option value="fa-car">Car</option>
+                                <option value="fa fa-battery-quarter">Cell Battery</option>
+                                <option value="fa fa-university">University</option>
+                                <option value="fa fa-binoculars">Binoculars</option>
+                                <option value="fa fa-beer">Beer</option>
+                                <option value="fa fa-cloud-download">Download</option>
+                                <option value="fa fa-cutlery">Cutlery</option>
+                                <option value="fa fa-motorcycle">Motorcycle</option>
+                                <option value="fa fa-road">Road</option>
+                                <option value="fa fa-suitcase">Suitcase</option>
                             </select>
                         </div>
 
@@ -127,11 +162,21 @@ $quads = \App\FrontPageQuads::find(1);
                         <label>Quad icon three:</label>
                         <div class="select-wrapper">
                             <select id="quad_three" name="quad_three">
-                                <option value="{{!empty($quads->quad_three) ? $quads->quad_three : 'REPLACE'}}" selected>{{$quads->iconNameMatcher($quads->quad_three)}} <--Selected</option>
+                                <option value="{{!empty($quads->quad_three) ? $quads->quad_three : 'REPLACE'}}" selected>{{$quads->iconNameMatcher($quads->quad_three)}}</option>
                                 <option value="fa-calculator">Calculator</option>
                                 <option value="fa-camera">Camera</option>
                                 <option value="fa-align-left">Align left</option>
                                 <option value="fa-bluetooth">Bluetooth</option>
+                                <option value="fa-car">Car</option>
+                                <option value="fa fa-battery-quarter">Cell Battery</option>
+                                <option value="fa fa-university">University</option>
+                                <option value="fa fa-binoculars">Binoculars</option>
+                                <option value="fa fa-beer">Beer</option>
+                                <option value="fa fa-cloud-download">Download</option>
+                                <option value="fa fa-cutlery">Cutlery</option>
+                                <option value="fa fa-motorcycle">Motorcycle</option>
+                                <option value="fa fa-road">Road</option>
+                                <option value="fa fa-suitcase">Suitcase</option>
                             </select>
                         </div>
 
@@ -140,11 +185,21 @@ $quads = \App\FrontPageQuads::find(1);
                         <label>Quad icon four:</label>
                         <div class="select-wrapper">
                             <select id="quad_four" name="quad_four">
-                                <option value="{{!empty($quads->quad_four) ? $quads->quad_four : 'REPLACE'}}" selected>{{$quads->iconNameMatcher($quads->quad_four)}} <--Selected</option>
+                                <option value="{{!empty($quads->quad_four) ? $quads->quad_four : 'REPLACE'}}" selected>{{$quads->iconNameMatcher($quads->quad_four)}}</option>
                                 <option value="fa-calculator">Calculator</option>
                                 <option value="fa-camera">Camera</option>
                                 <option value="fa-align-left">Align left</option>
                                 <option value="fa-bluetooth">Bluetooth</option>
+                                <option value="fa-car">Car</option>
+                                <option value="fa fa-battery-quarter">Cell Battery</option>
+                                <option value="fa fa-university">University</option>
+                                <option value="fa fa-binoculars">Binoculars</option>
+                                <option value="fa fa-beer">Beer</option>
+                                <option value="fa fa-cloud-download">Download</option>
+                                <option value="fa fa-cutlery">Cutlery</option>
+                                <option value="fa fa-motorcycle">Motorcycle</option>
+                                <option value="fa fa-road">Road</option>
+                                <option value="fa fa-suitcase">Suitcase</option>
                             </select>
                         </div>
                     </div>

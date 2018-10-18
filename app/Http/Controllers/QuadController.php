@@ -22,7 +22,7 @@ class QuadController extends Controller
             }
         } else {
             $quads = FrontPageQuads::create(['quad_one'=>'', 'quad_two'=>'', 'quad_three'=>'', 'quad_four'=>'']);
-            Session::flash('message', 'Database column for icons has been created, select values again!');
+            Session::flash('message', 'Database column for icons has been created, you must select values again!');
         }
         $quads->save();
         return view('admin_page.admin_index.index');
