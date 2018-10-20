@@ -6,6 +6,12 @@ use App\TinyImages;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
+/*
+ * This controller only has logic to validate JPEG/jpg files only, it will be assumed by the PO if more
+ * functionality should be added. At the moment I am developing a MVP to catch fatal errors like octet-streams
+ * and similar exceptions.
+ */
+
 class TinyController extends Controller
 {
     public function updateSliders(Request $request){
@@ -21,7 +27,6 @@ class TinyController extends Controller
         $file3 = $request->file('tinyThree');
 
         if(is_file($file1) || is_file($file2) || is_file($file3)){
-
             if ($request->hasFile('tinyOne')) {
                 if($file1->getClientOriginalExtension() == 'jpg' || $file1->getClientOriginalExtension() == 'JPEG'){
                     if ($tiny->tiny_one) {
@@ -81,4 +86,5 @@ class TinyController extends Controller
         $tiny->save();
         return view('admin_page.admin_index.index');
     }
-}
+}//End of class
+
