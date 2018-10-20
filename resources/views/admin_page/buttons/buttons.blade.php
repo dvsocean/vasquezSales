@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Auth;
 $signedIn = Auth::check();
 $user = Auth::user();
 $bicons = \App\FrontpageBicons::find(1);
+$quads = \App\FrontPageQuads::find(1);
+$monitor = \App\MonitorImages::find(1);
 ?>
 
 @if($signedIn)
@@ -26,8 +28,8 @@ $bicons = \App\FrontpageBicons::find(1);
 <div id="page-wrapper">
 
     <!--NAV-->
-@include('includes.nav_menu.nav')
-<!--NAV-->
+    @include('includes.nav_menu.nav')
+    <!--NAV-->
     <br>
     <h1 class="text-center">Edit home page button text and icons</h1>
     <br>
@@ -37,30 +39,30 @@ $bicons = \App\FrontpageBicons::find(1);
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                 <h3>Home page buttons:</h3>
                 <form action="/updateBicons" method="POST">
-                    {{csrf_field()}}
+                    {{ csrf_field() }}
                     <div class="well">
                         <label>Category button one:</label>
-                        <input type="text" value="{{!empty($bicons->cat_button_one) ? $bicons->cat_button_one : 'Category one..replace with text'}}" name="category_button_one">
+                        <input type="text" value="{{!empty($bicons->cat_button_one) ? $bicons->cat_button_one : 'Category one'}}" name="category_button_one">
 
                         <br><br>
 
                         <label>Category button two:</label>
-                        <input type="text" value="{{!empty($bicons->cat_button_two) ? $bicons->cat_button_two : 'Category two..replace with text'}}" name="category_button_two">
+                        <input type="text" value="{{!empty($bicons->cat_button_two) ? $bicons->cat_button_two : 'Category two'}}" name="category_button_two">
 
                         <br><br>
 
                         <label>Category button three:</label>
-                        <input type="text" value="{{!empty($bicons->cat_button_three) ? $bicons->cat_button_three : 'Category three..replace with text'}}" name="category_button_three">
+                        <input type="text" value="{{!empty($bicons->cat_button_three) ? $bicons->cat_button_three : 'Category three'}}" name="category_button_three">
 
                         <br><br>
 
                         <label>Category button four:</label>
-                        <input type="text" value="{{!empty($bicons->cat_button_four) ? $bicons->cat_button_four : 'Category four..replace with text'}}" name="category_button_four">
+                        <input type="text" value="{{!empty($bicons->cat_button_four) ? $bicons->cat_button_four : 'Category four'}}" name="category_button_four">
 
                         <br><br>
 
                         <label>Footer button text:</label>
-                        <input type="text" value="{{!empty($bicons->footer_button) ? $bicons->footer_button : 'Footer button..replace with text'}}" name="footer_button">
+                        <input type="text" value="{{!empty($bicons->footer_button) ? $bicons->footer_button : 'Footer button'}}" name="footer_button">
                     </div>
                     <input type="submit" name="submit" value="update" class="form-control">
                 </form>
@@ -68,21 +70,29 @@ $bicons = \App\FrontpageBicons::find(1);
             </div>
 
 
+
+
+
+            
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                 <h3>Icons:</h3>
-                <form action="#" method="POST"enctype="multipart/form-data">
+                <form action="/monitors" method="POST"enctype="multipart/form-data">
+                    {{ csrf_field() }}
                     <div class="well">
                         <label>Monitor image 1:</label>
+                        <img src="{{!empty($monitor->image_one) ? 'monitor_images/' . $monitor->image_one : 'monitor_images/default/performance.png'}}" height="100" width="100">
                         <input type="file" name="monitor_image_one"/>
 
-                        <br><br>
+                        <br><br><br>
 
                         <label>Monitor image 2:</label>
+                        <img src="{{!empty($monitor->image_two) ? 'monitor_images/' . $monitor->image_two : 'monitor_images/default/dollar.png'}}" height="100" width="100">
                         <input type="file" name="monitor_image_two"/>
 
-                        <br><br>
+                        <br><br><br>
 
                         <label>Monitor image 3:</label>
+                        <img src="{{!empty($monitor->image_three) ? 'monitor_images/' . $monitor->image_three : 'monitor_images/default/repair.png'}}" height="100" width="100">
                         <input type="file" name="monitor_image_three"/>
                     </div>
                     <input type="submit" name="submit" value="update" class="form-control">
@@ -92,29 +102,108 @@ $bicons = \App\FrontpageBicons::find(1);
 
 
 
+
+
+
+
+
+
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                 <h3>Quad icons(Font Awesome):</h3>
-                <form action="#" method="POST">
+                <form action="/quads" method="POST">
+                    {{ csrf_field() }}
                     <div class="well">
                         <label>Quad icon one:</label>
-                        <input type="text" name="quad_icon_one" placeholder="enter icon name"/>
+                        <div class="select-wrapper">
+                            <select id="quad_one" name="quad_one">
+                                <option value="{{!empty($quads->quad_one) ? $quads->quad_one : 'REPLACE'}}" selected>{{!empty($quads->quad_one) ? $quads->iconNameMatcher($quads->quad_one) : 'PENDING DATABASE'}}</option>
+                                <option value="fa-calculator">Calculator</option>
+                                <option value="fa-camera">Camera</option>
+                                <option value="fa-align-left">Align left</option>
+                                <option value="fa-bluetooth">Bluetooth</option>
+                                <option value="fa-car">Car</option>
+                                <option value="fa fa-battery-quarter">Cell Battery</option>
+                                <option value="fa fa-university">University</option>
+                                <option value="fa fa-binoculars">Binoculars</option>
+                                <option value="fa fa-beer">Beer</option>
+                                <option value="fa fa-cloud-download">Download</option>
+                                <option value="fa fa-cutlery">Cutlery</option>
+                                <option value="fa fa-motorcycle">Motorcycle</option>
+                                <option value="fa fa-road">Road</option>
+                                <option value="fa fa-suitcase">Suitcase</option>
+                            </select>
+                        </div>
 
                         <br><br>
 
                         <label>Quad icon two:</label>
-                        <input type="text" name="quad_icon_two" placeholder="enter icon name"/>
+                        <div class="select-wrapper">
+                            <select id="quad_two" name="quad_two">
+                                <option value="{{!empty($quads->quad_two) ? $quads->quad_two : 'REPLACE'}}" selected>{{!empty($quads->quad_two) ? $quads->iconNameMatcher($quads->quad_two) : 'PENDING DATABASE'}}</option>
+                                <option value="fa-calculator">Calculator</option>
+                                <option value="fa-camera">Camera</option>
+                                <option value="fa-align-left">Align left</option>
+                                <option value="fa-bluetooth">Bluetooth</option>
+                                <option value="fa-car">Car</option>
+                                <option value="fa fa-battery-quarter">Cell Battery</option>
+                                <option value="fa fa-university">University</option>
+                                <option value="fa fa-binoculars">Binoculars</option>
+                                <option value="fa fa-beer">Beer</option>
+                                <option value="fa fa-cloud-download">Download</option>
+                                <option value="fa fa-cutlery">Cutlery</option>
+                                <option value="fa fa-motorcycle">Motorcycle</option>
+                                <option value="fa fa-road">Road</option>
+                                <option value="fa fa-suitcase">Suitcase</option>
+                            </select>
+                        </div>
 
                         <br><br>
 
                         <label>Quad icon three:</label>
-                        <input type="text" name="quad_icon_three" placeholder="enter icon name"/>
+                        <div class="select-wrapper">
+                            <select id="quad_three" name="quad_three">
+                                <option value="{{!empty($quads->quad_three) ? $quads->quad_three : 'REPLACE'}}" selected>{{!empty($quads->quad_three) ? $quads->iconNameMatcher($quads->quad_three) : 'PENDING DATABASE'}}</option>
+                                <option value="fa-calculator">Calculator</option>
+                                <option value="fa-camera">Camera</option>
+                                <option value="fa-align-left">Align left</option>
+                                <option value="fa-bluetooth">Bluetooth</option>
+                                <option value="fa-car">Car</option>
+                                <option value="fa fa-battery-quarter">Cell Battery</option>
+                                <option value="fa fa-university">University</option>
+                                <option value="fa fa-binoculars">Binoculars</option>
+                                <option value="fa fa-beer">Beer</option>
+                                <option value="fa fa-cloud-download">Download</option>
+                                <option value="fa fa-cutlery">Cutlery</option>
+                                <option value="fa fa-motorcycle">Motorcycle</option>
+                                <option value="fa fa-road">Road</option>
+                                <option value="fa fa-suitcase">Suitcase</option>
+                            </select>
+                        </div>
 
                         <br><br>
 
                         <label>Quad icon four:</label>
-                        <input type="text" name="quad_icon_four" placeholder="enter icon name"/>
+                        <div class="select-wrapper">
+                            <select id="quad_four" name="quad_four">
+                                <option value="{{!empty($quads->quad_four) ? $quads->quad_four : 'REPLACE'}}" selected>{{!empty($quads->quad_four) ? $quads->iconNameMatcher($quads->quad_four) : 'PENDING DATABASE'}}</option>
+                                <option value="fa-calculator">Calculator</option>
+                                <option value="fa-camera">Camera</option>
+                                <option value="fa-align-left">Align left</option>
+                                <option value="fa-bluetooth">Bluetooth</option>
+                                <option value="fa-car">Car</option>
+                                <option value="fa fa-battery-quarter">Cell Battery</option>
+                                <option value="fa fa-university">University</option>
+                                <option value="fa fa-binoculars">Binoculars</option>
+                                <option value="fa fa-beer">Beer</option>
+                                <option value="fa fa-cloud-download">Download</option>
+                                <option value="fa fa-cutlery">Cutlery</option>
+                                <option value="fa fa-motorcycle">Motorcycle</option>
+                                <option value="fa fa-road">Road</option>
+                                <option value="fa fa-suitcase">Suitcase</option>
+                            </select>
+                        </div>
                     </div>
-                    <input type="submit" name="submit" value="update" class="form-control">
+                    <input type="submit" name="submit_button" value="update" class="form-control">
                 </form>
             </div>
         </div>
@@ -124,7 +213,6 @@ $bicons = \App\FrontpageBicons::find(1);
 <!--FOOTER-->
 @include('includes.header_footer.footer')
 <!--FOOTER-->
-
 
 </body>
 </html>

@@ -9,66 +9,63 @@ use Illuminate\Support\Facades\Session;
 class TinyController extends Controller
 {
     public function updateSliders(Request $request){
+
         if(TinyImages::find(1)){
             $tiny = TinyImages::find(1);
         } else {
             $tiny = TinyImages::create(['tiny_one'=>'', 'tiny_two'=>'', 'tiny_three'=>'', 'tiny_four'=>'']);
         }
 
-        if ($request->hasFile('tinyOne')) {
-            $file = $request->file('tinyOne');
-            if ($tiny->tiny_one) {
-                if (file_exists($tiny->tiny_one)) {
-                    unlink($tiny->tiny_one);
-                    $tiny->delete($tiny->tiny_one);
-                }
-            }
-            $name = time() . $file->getClientOriginalName();
-            $file->move('tiny_images/', $name);
-            $tiny->tiny_one = 'tiny_images/' . $name;
-        }
+        $file1 = $request->file('tinyOne');
+        $file2 = $request->file('tinyTwo');
+        $file3 = $request->file('tinyThree');
 
-        if ($request->hasFile('tinyTwo')) {
-            $file = $request->file('tinyTwo');
-            if (!empty($tiny->tiny_two)) {
-                if (file_exists($tiny->tiny_two)) {
-                    unlink($tiny->tiny_two);
-                    $tiny->delete($tiny->tiny_two);
+        if(is_file($file1) || is_file($file2) || is_file($file3)){
+            if ($request->hasFile('tinyOne')) {
+                if ($tiny->tiny_one) {
+                    if (file_exists($tiny->tiny_one)) {
+                        //delete from server
+                        unlink($tiny->tiny_one);
+                        //delete from database
+                        $tiny->delete($tiny->tiny_one);
+                    }
                 }
+                $name = time() . $file1->getClientOriginalName();
+                $file1->move('tiny_images/', $name);
+                $tiny->tiny_one = 'tiny_images/' . $name;
+                Session::flash('message', 'Sliders on the front page have been updated');
             }
-            $name = time() . $file->getClientOriginalName();
-            $file->move('tiny_images/', $name);
-            $tiny->tiny_two = 'tiny_images/' . $name;
-        }
 
-        if ($request->hasFile('tinyThree')) {
-            $file = $request->file('tinyThree');
-            if ($tiny->tiny_three) {
-                if (file_exists($tiny->tiny_three)) {
-                    unlink($tiny->tiny_three);
-                    $tiny->delete($tiny->tiny_three);
+            if ($request->hasFile('tinyTwo')) {
+                if ($tiny->tiny_two) {
+                    if (file_exists($tiny->tiny_two)) {
+                        unlink($tiny->tiny_two);
+                        $tiny->delete($tiny->tiny_two);
+                    }
                 }
+                $name = time() . $file2->getClientOriginalName();
+                $file2->move('tiny_images/', $name);
+                $tiny->tiny_two = 'tiny_images/' . $name;
+                Session::flash('message', 'Sliders on the front page have been updated');
             }
-            $name = time() . $file->getClientOriginalName();
-            $file->move('tiny_images/', $name);
-            $tiny->tiny_three = 'tiny_images/' . $name;
-        }
 
-        if ($request->hasFile('tinyFour')) {
-            $file = $request->file('tinyFour');
-            if ($tiny->tiny_four) {
-                if (file_exists($tiny->tiny_four)) {
-                    unlink($tiny->tiny_four);
-                    $tiny->delete($tiny->tiny_four);
+            if ($request->hasFile('tinyThree')) {
+                if ($tiny->tiny_three) {
+                    if (file_exists($tiny->tiny_three)) {
+                        unlink($tiny->tiny_three);
+                        $tiny->delete($tiny->tiny_three);
+                    }
                 }
+                $name = time() . $file3->getClientOriginalName();
+                $file3->move('tiny_images/', $name);
+                $tiny->tiny_three = 'tiny_images/' . $name;
+                Session::flash('message', 'Sliders on the front page have been updated');
             }
-            $name = time() . $file->getClientOriginalName();
-            $file->move('tiny_images/', $name);
-            $tiny->tiny_four = 'tiny_images/' . $name;
+        } else {
+            Session::flash('error_message', 'NOT A FILE! PLEASE CHOOSE AGAIN');
         }
 
         $tiny->save();
-        Session::flash('message', 'Slides on the home page have been updated');
         return view('admin_page.admin_index.index');
     }
 }

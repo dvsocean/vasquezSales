@@ -5,6 +5,9 @@
 	$user = Auth::user();
 	$fpc = App\FrontPageContent::find(1);
 	$tiny = App\TinyImages::find(1);
+	$bicon = \App\FrontpageBicons::find(1);
+	$monitor = \App\MonitorImages::find(1);
+	$quads = \App\FrontPageQuads::find(1);
 	?>
 	<!--HEADER-->
 	@include('includes.header_footer.header')
@@ -80,7 +83,7 @@
 										replace the image below with a JPEG or PNG. Just make sure it's exactly
 										320x340 or at least the same aspect ratio (16:17).
 									-->
-									<span class="image"><img src="images/performance.png" alt="" /></span>
+									<span class="image"><img src="{{!empty($monitor->image_one) ? 'monitor_images/' . $monitor->image_one : 'images/default/performance.png'}}" alt="" /></span>
 								</div>
 							</section>
 
@@ -99,7 +102,7 @@
 										Note: You can replace the image below with a JPEG or PNG. Just make sure it's exactly
 										320x340 or at least the same aspect ratio (16:17).
 									-->
-									<span class="image"><img src="images/dollar.png" alt="" /></span>
+									<span class="image"><img src="{{!empty($monitor->image_two) ? 'monitor_images/' . $monitor->image_two : 'images/default/dollar.png'}}" alt="" /></span>
 								</div>
 							</section>
 
@@ -118,7 +121,7 @@
 										Note: You can replace the image below with a JPEG or PNG. Just make sure it's exactly
 										320x340 or at least the same aspect ratio (16:17).
 									-->
-									<span class="image"><img src="images/repair.png" alt="" /></span>
+									<span class="image"><img src="{{!empty($monitor->image_three) ? 'monitor_images/' . $monitor->image_three : 'images/default/repair.png'}}" alt="" /></span>
 								</div>
 							</section>
 
@@ -130,28 +133,28 @@
 									</header>
 									<div class="features">
 										<section>
-											<span class="icon major fab fa-bluetooth style1"></span>
+											<span class="icon major fab {{!empty($quads->quad_one) ? $quads->quad_one : 'fa-camera'}} style1"></span>
 											<h3>{{!empty($fpc->quad_heading_one) ? $fpc->quad_heading_one : 'REPLACE THIS TEXT'}}</h3>
 											<p>
 												{{!empty($fpc->quad_body_one) ? $fpc->quad_body_one : 'REPLACE THIS TEXT'}}
 											</p>
 										</section>
 										<section>
-											<span class="icon major fas fa-align-left style2"></span>
+											<span class="icon major fas {{!empty($quads->quad_two) ? $quads->quad_two : 'fa-camera'}} style2"></span>
 											<h3>{{!empty($fpc->quad_heading_two) ? $fpc->quad_heading_two : 'REPLACE THIS TEXT'}}</h3>
 											<p>
 												{{!empty($fpc->quad_body_two) ? $fpc->quad_body_two : 'REPLACE THIS TEXT'}}
 											</p>
 										</section>
 										<section>
-											<span class="icon major fas fa-camera style3"></span>
+											<span class="icon major fas {{!empty($quads->quad_three) ? $quads->quad_three : 'fa-camera'}} style3"></span>
 											<h3>{{!empty($fpc->quad_heading_three) ? $fpc->quad_heading_three : 'REPLACE THIS TEXT'}}</h3>
 											<p>
 												{{!empty($fpc->quad_body_three) ? $fpc->quad_body_three : 'REPLACE THIS TEXT'}}
 											</p>
 										</section>
 										<section>
-											<span class="icon major fas fa-calculator style4"></span>
+											<span class="icon major fas {{!empty($quads->quad_four) ? $quads->quad_four : 'fa-camera'}} style4"></span>
 											<h3>{{!empty($fpc->quad_heading_four) ? $fpc->quad_heading_four : 'REPLACE THIS TEXT'}}</h3>
 											<p>
 												{{!empty($fpc->quad_body_four) ? $fpc->quad_body_four : 'REPLACE THIS TEXT'}}
@@ -168,7 +171,7 @@
 										{{!empty($fpc->footer_title) ? $fpc->footer_title : 'REPLACE THIS TEXT'}}
 									</p>
 									<ul class="actions vertical">
-										<li><a href="#" class="button big">Learn More</a></li>
+										<li><a href="#" class="button big">{{!empty($bicon->footer_button) ? $bicon->footer_button : 'REPLACE'}}</a></li>
 									</ul>
 								</div>
 							</section>

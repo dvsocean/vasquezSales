@@ -2189,13 +2189,13 @@
 	}
 
 
-	/*override for update form*/
+	/*This sum bitch is responsible for the background color in the following input fields*/
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
 	select,
 	textarea {
-		background: rgba(144, 144, 144, 0.075);
+		/*background: rgba(144, 144, 144, 0.075);*/
 		border-color: #eaeaea;
 	}
 
