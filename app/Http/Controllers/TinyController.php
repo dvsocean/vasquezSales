@@ -26,9 +26,13 @@ class TinyController extends Controller
         $file2 = $request->file('tinyTwo');
         $file3 = $request->file('tinyThree');
 
+
+
         if(is_file($file1) || is_file($file2) || is_file($file3)){
             if ($request->hasFile('tinyOne')) {
-                if($file1->getClientOriginalExtension() == 'jpg' || $file1->getClientOriginalExtension() == 'JPEG'){
+                if($file1->getClientOriginalExtension() == 'jpg' || $file1->getClientOriginalExtension() == 'JPEG'
+                || $file1->getClientOriginalExtension() == 'JPG' || $file1->getClientOriginalExtension() == 'jpeg'
+                || $file3->getClientOriginalExtension() == 'png' || $file3->getClientOriginalExtension() == 'PNG'){
                     if ($tiny->tiny_one) {
                         if (file_exists($tiny->tiny_one)) {
                             //delete from server
@@ -47,7 +51,9 @@ class TinyController extends Controller
             }
 
             if ($request->hasFile('tinyTwo')) {
-                if($file2->getClientOriginalExtension() == 'jpg' || $file2->getClientOriginalExtension() == 'JPEG'){
+                if($file2->getClientOriginalExtension() == 'jpg' || $file2->getClientOriginalExtension() == 'JPEG'
+                || $file2->getClientOriginalExtension() == 'JPG' || $file2->getClientOriginalExtension() == 'jpeg'
+                || $file2->getClientOriginalExtension() == 'png' || $file2->getClientOriginalExtension() == 'PNG'){
                     if ($tiny->tiny_two) {
                         if (file_exists($tiny->tiny_two)) {
                             unlink($tiny->tiny_two);
@@ -64,7 +70,10 @@ class TinyController extends Controller
             }
 
             if ($request->hasFile('tinyThree')) {
-                if($file3->getClientOriginalExtension() == 'jpg' || $file3->getClientOriginalExtension() == 'JPEG'){
+                if($file3->getClientOriginalExtension() == 'jpg' || $file3->getClientOriginalExtension() == 'JPEG'
+                    || $file3->getClientOriginalExtension() == 'JPG' || $file3->getClientOriginalExtension() == 'jpeg'
+                    || $file3->getClientOriginalExtension() == 'png' || $file3->getClientOriginalExtension() == 'PNG'){
+                    //database deletion logic
                     if ($tiny->tiny_three) {
                         if (file_exists($tiny->tiny_three)) {
                             unlink($tiny->tiny_three);
@@ -76,11 +85,11 @@ class TinyController extends Controller
                     $tiny->tiny_three = 'tiny_images/' . $name;
                     Session::flash('message', 'Sliders on the front page have been updated');
                 } else {
-                    Session::flash('error_message', 'ERROR! We only accept JPEG/jpg at this time. Please select a the correct photo format.');
+                    Session::flash('error_message', 'ERROR! We only accept JPEGs and PNGs at this time. Please select a the correct file format.');
                 }
             }
         } else {
-            Session::flash('error_message', 'NOT A FILE! PLEASE CHOOSE AGAIN');
+            Session::flash('error_message', 'NOT AN ACCEPTABLE IMAGE FILE! PLEASE CHOOSE AGAIN');
         }
 
         $tiny->save();
