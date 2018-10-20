@@ -4,13 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\SliderPost;
 use App\TinyImages;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
 /*
- * This controller has logic to validate jpgs and png files only, it will be assumed by the PO if more
- * functionality should be added. At the moment I am developing a MVP to catch fatal errors like octet-streams
- * and similar exceptions. The custom request object will validate for file size as well.
+ * This controller has logic to validate jpgs, pngs and large files, it will be assumed by the PO if more
+ * functionality should be added or removed. This is a MVP to catch fatal errors like octet-streams and
+ * exceptions of the like. This request object is written so that it will perform validation before the
+ * request hits the tiny controller as this will prevent logic from cluttering up.
  */
 
 class TinyController extends Controller
