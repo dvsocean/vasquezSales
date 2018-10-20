@@ -37,7 +37,7 @@ class TinyController extends Controller
                     $tiny->tiny_one = 'tiny_images/' . $name;
                     Session::flash('message', 'Sliders on the front page have been updated');
                 } else {
-                    Session::flash('error_message', 'ERROR! We only accept JPEG/jpg at this time');
+                    Session::flash('error_message', 'ERROR! We only accept JPEG/jpg at this time. Please select a the correct photo format.');
                 }
             }
 
@@ -54,7 +54,7 @@ class TinyController extends Controller
                     $tiny->tiny_two = 'tiny_images/' . $name;
                     Session::flash('message', 'Sliders on the front page have been updated');
                 } else {
-                    Session::flash('error_message', 'ERROR! We only accept JPEG/jpg at this time');
+                    Session::flash('error_message', 'ERROR! We only accept JPEG/jpg at this time. Please select a the correct photo format.');
                 }
             }
 
@@ -71,7 +71,7 @@ class TinyController extends Controller
                     $tiny->tiny_three = 'tiny_images/' . $name;
                     Session::flash('message', 'Sliders on the front page have been updated');
                 } else {
-                    Session::flash('error_message', 'ERROR! We only accept JPEG/jpg at this time');
+                    Session::flash('error_message', 'ERROR! We only accept JPEG/jpg at this time. Please select a the correct photo format.');
                 }
             }
         } else {
