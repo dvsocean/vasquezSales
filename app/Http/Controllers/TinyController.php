@@ -62,7 +62,7 @@ class TinyController extends Controller
                 Session::flash('message', 'Sliders on the front page have been updated');
             }
         } else {
-            Session::flash('message', 'ERROR! isOCTET-STREAM = true');
+            Session::flash('error_message', 'NOT A FILE! PLEASE CHOOSE AGAIN');
         }
 
         $tiny->save();
