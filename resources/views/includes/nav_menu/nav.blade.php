@@ -7,23 +7,24 @@
  */
 -->
 <header id="header">
-    @if($signedIn)
-        <ul style="list-style-type: none">
-            <li>
-                <br>
-                <a href="{{ route('logout') }}"
-                   onclick="event.preventDefault();
-                                                   document.getElementById('logout-form').submit();">
-                    ({{ucfirst($user->name)}}) Logout
-                </a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    {{ csrf_field() }}
-                </form>
-            </li>
-        </ul>
-    @else
-        <a href="#" class="logo">Financing available <span>by VasquezSales</span></a>
-    @endif
+    {{--@if($signedIn)--}}
+        {{--<ul style="list-style-type: none">--}}
+            {{--<li>--}}
+                {{--<br>--}}
+                {{--<a href="{{ route('logout') }}"--}}
+                   {{--onclick="event.preventDefault();--}}
+                                                   {{--document.getElementById('logout-form').submit();">--}}
+                    {{--({{ucfirst($user->name)}}) Logout--}}
+                {{--</a>--}}
+                {{--<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">--}}
+                    {{--{{ csrf_field() }}--}}
+                {{--</form>--}}
+            {{--</li>--}}
+        {{--</ul>--}}
+    {{--@else--}}
+        {{--<a href="#" class="logo">Financing available <span>by VasquezSales</span></a>--}}
+    {{--@endif--}}
+    <a href="#" class="logo">Financing available</a>
     <nav>
         <ul>
             <li><input type="text" placeholder="Search" name="search"></li>

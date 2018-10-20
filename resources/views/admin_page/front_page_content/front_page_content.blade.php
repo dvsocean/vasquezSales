@@ -36,18 +36,24 @@ $fpc = \App\FrontPageContent::find(1);
                 <div class="container">
                     <form action="/front_page_content" method="POST">
                         {{ csrf_field() }}
-
                     <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                            @if (count($errors) > 0)
-                                <div class="alert alert-danger">
-                                    <p>
-                                        A minimum of 5 characters is required for the heading<br>
-                                        A minimum of 10 characters is required for the body
-                                    </p>
-                                </div>
-                            @endif
+                        <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+                            <a href="{{route('homePage')}}" class="btn btn-default">Home</a>
+                            <span> </span>
+                            <a href="{{route('admin')}}" class="btn btn-default">Dashboard</a>
+                            <br>
                         </div>
+
+                        <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+                            <br>
+                            <!-- ERRORS ARRAY -->
+                            @include('includes.info_message_flash_bar.errors_array')
+                            <!-- ERRORS ARRAY -->
+                        </div>
+
+                        {{--<div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">--}}
+                            {{--<!--PLACEHOLDER-->--}}
+                        {{--</div>--}}
                     </div>
 
                     <div class="row">

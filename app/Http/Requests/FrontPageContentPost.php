@@ -24,11 +24,11 @@ class FrontPageContentPost extends FormRequest
     public function rules()
     {
         return [
-            'heading_one'=>'required|min:5',
+            'heading_one'=>'required|min:3',
             'body_one'=>'required|min:10',
-            'heading_two'=>'required|min:5',
+            'heading_two'=>'required|min:3',
             'body_two'=>'required|min:10',
-            'heading_three'=>'required|min:5',
+            'heading_three'=>'required|min:3',
             'body_three'=>'required|min:10',
         ];
     }

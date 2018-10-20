@@ -31,13 +31,30 @@ $tiny = App\TinyImages::find(1);
 <!--NAV-->
 @include('includes.nav_menu.nav')
 <!--NAV-->
-    <br>
-    <h1 class="text-center">Edit slider images</h1>
-    <br>
 
     <div class="container">
         <form action="/updateSliderImages" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
+
+        <div class="row">
+            <br><br>
+            <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+                <br>
+                <a href="{{route('homePage')}}" class="btn btn-default">Home</a>
+                <span> </span>
+                <a href="{{route('admin')}}" class="btn btn-default">Dashboard</a>
+                <br>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                <h1 class="text-center">Edit slider images</h1>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+                <!--PLACEHOLDER-->
+            </div>
+        </div>
+
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                 <h3>First image:</h3>
