@@ -69,11 +69,6 @@ $monitor = \App\MonitorImages::find(1);
                 <br><br>
             </div>
 
-
-
-
-
-            
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                 <h3>Icons:</h3>
                 <form action="/monitors" method="POST"enctype="multipart/form-data">
@@ -99,14 +94,6 @@ $monitor = \App\MonitorImages::find(1);
                 </form>
                 <br><br>
             </div>
-
-
-
-
-
-
-
-
 
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                 <h3>Quad icons(Font Awesome):</h3>

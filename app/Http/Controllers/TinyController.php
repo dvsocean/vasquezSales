@@ -2,19 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SliderPost;
 use App\TinyImages;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
 /*
- * This controller only has logic to validate JPEG/jpg files only, it will be assumed by the PO if more
+ * This controller has logic to validate jpgs and png files only, it will be assumed by the PO if more
  * functionality should be added. At the moment I am developing a MVP to catch fatal errors like octet-streams
- * and similar exceptions.
+ * and similar exceptions. The custom request object will validate for file size as well.
  */
 
 class TinyController extends Controller
 {
-    public function updateSliders(Request $request){
+    public function updateSliders(SliderPost $request){
         if(TinyImages::find(1)){
             $tiny = TinyImages::find(1);
         } else {
@@ -26,13 +27,12 @@ class TinyController extends Controller
         $file2 = $request->file('tinyTwo');
         $file3 = $request->file('tinyThree');
 
-
-
         if(is_file($file1) || is_file($file2) || is_file($file3)){
+
             if ($request->hasFile('tinyOne')) {
                 if($file1->getClientOriginalExtension() == 'jpg' || $file1->getClientOriginalExtension() == 'JPEG'
                 || $file1->getClientOriginalExtension() == 'JPG' || $file1->getClientOriginalExtension() == 'jpeg'
-                || $file3->getClientOriginalExtension() == 'png' || $file3->getClientOriginalExtension() == 'PNG'){
+                || $file1->getClientOriginalExtension() == 'png' || $file1->getClientOriginalExtension() == 'PNG'){
                     if ($tiny->tiny_one) {
                         if (file_exists($tiny->tiny_one)) {
                             //delete from server
@@ -46,7 +46,7 @@ class TinyController extends Controller
                     $tiny->tiny_one = 'tiny_images/' . $name;
                     Session::flash('message', 'Sliders on the front page have been updated');
                 } else {
-                    Session::flash('error_message', 'ERROR! We only accept JPEG/jpg at this time. Please select a the correct photo format.');
+                    Session::flash('error_message', 'ERROR! We only accept JPEGs and PNGs at this time. Please select a correct file format.');
                 }
             }
 
@@ -65,7 +65,7 @@ class TinyController extends Controller
                     $tiny->tiny_two = 'tiny_images/' . $name;
                     Session::flash('message', 'Sliders on the front page have been updated');
                 } else {
-                    Session::flash('error_message', 'ERROR! We only accept JPEG/jpg at this time. Please select a the correct photo format.');
+                    Session::flash('error_message', 'ERROR! We only accept JPEGs and PNGs at this time. Please select a correct file format.');
                 }
             }
 
@@ -85,7 +85,7 @@ class TinyController extends Controller
                     $tiny->tiny_three = 'tiny_images/' . $name;
                     Session::flash('message', 'Sliders on the front page have been updated');
                 } else {
-                    Session::flash('error_message', 'ERROR! We only accept JPEGs and PNGs at this time. Please select a the correct file format.');
+                    Session::flash('error_message', 'ERROR! We only accept JPEGs and PNGs at this time. Please select a correct file format.');
                 }
             }
         } else {
