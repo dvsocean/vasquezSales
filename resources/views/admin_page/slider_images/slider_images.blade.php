@@ -28,7 +28,7 @@ $tiny = App\TinyImages::find(1);
 <!-- Page Wrapper -->
 <div id="page-wrapper">
 
-    <!--NAV-->
+<!--NAV-->
 @include('includes.nav_menu.nav')
 <!--NAV-->
     <br>

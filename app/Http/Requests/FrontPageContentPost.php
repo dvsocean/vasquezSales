@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class SliderPost extends FormRequest
+class FrontPageContentPost extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,12 @@ class SliderPost extends FormRequest
     public function rules()
     {
         return [
-            //
+            'heading_one'=>'required|min:5',
+            'body_one'=>'required|min:10',
+            'heading_two'=>'required|min:5',
+            'body_two'=>'required|min:10',
+            'heading_three'=>'required|min:5',
+            'body_three'=>'required|min:10',
         ];
     }
 }
