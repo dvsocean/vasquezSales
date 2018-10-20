@@ -38,7 +38,7 @@
                 <button id="try_again" class="form-control">Try again</button>
                 <script>
                     $('#try_again').click(function(){
-                        document.location = "/editSliders";
+                        window.history.back();
                     });
                 </script>
             </div>

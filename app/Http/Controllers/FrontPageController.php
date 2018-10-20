@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\FrontPageContent;
+use App\Http\Requests\FrontPageContentPost;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
 class FrontPageController extends Controller
 {
-    public function update(Request $request){
+    public function update(FrontPageContentPost $request){
         if(FrontPageContent::find(1)){
             $fpc = FrontPageContent::find(1);
         } else {

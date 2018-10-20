@@ -38,17 +38,15 @@ $fpc = \App\FrontPageContent::find(1);
                         {{ csrf_field() }}
 
                     <div class="row">
-                        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
-                            <!--PLACEHOLDER-->
-                        </div>
-
-                        <div class="col-xs-12 col-sm-4 col-md-6 col-lg-6">
-                            {{--<label>Main title:</label>--}}
-                            {{--<input type="text" class="form-control" name="main_title" placeholder="Enter home page title" value="{{$fpc->main_title}}">--}}
-                        </div>
-
-                        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
-                            <!--PLACEHOLDER-->
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            @if (count($errors) > 0)
+                                <div class="alert alert-danger">
+                                    <p>
+                                        A minimum of 5 characters is required for the heading<br>
+                                        A minimum of 10 characters is required for the body
+                                    </p>
+                                </div>
+                            @endif
                         </div>
                     </div>
 
