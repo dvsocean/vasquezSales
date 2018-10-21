@@ -27,7 +27,7 @@
     <a href="#" class="logo">Financing available</a>
     <nav>
         <ul>
-            <li><input type="text" placeholder="Search" name="search"></li>
+            {{--<li><input type="text" placeholder="Search" name="search"></li>--}}
             <li><a href="#menu">Menu</a></li>
         </ul>
     </nav>
