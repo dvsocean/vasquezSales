@@ -35,7 +35,6 @@ $monitor = \App\MonitorImages::find(1);
     <br>
 
     <div class="container">
-
         <div class="row">
             <div class="col-xsm-12 col-sm-12 col-md-2 col-lg-2">
                 <br>
