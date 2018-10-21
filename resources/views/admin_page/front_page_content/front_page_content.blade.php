@@ -14,7 +14,7 @@ $user = Auth::user();
 $fpc = \App\FrontPageContent::find(1);
 ?>
 
-@if($signedIn)
+@if($signedIn && $user->admin)
     <!DOCTYPE HTML>
     <html>
         <title>Front Page Content</title>

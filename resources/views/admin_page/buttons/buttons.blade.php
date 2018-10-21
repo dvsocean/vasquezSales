@@ -15,7 +15,7 @@ $quads = \App\FrontPageQuads::find(1);
 $monitor = \App\MonitorImages::find(1);
 ?>
 
-@if($signedIn)
+@if($signedIn && $user->admin)
 <!DOCTYPE HTML>
 <html>
 <title>Edit buttons</title>
@@ -112,7 +112,7 @@ $monitor = \App\MonitorImages::find(1);
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                <h3>Quad icons(Font Awesome):</h3>
+                <h3>Quad icons:</h3>
                 <form action="/quads" method="POST">
                     {{ csrf_field() }}
                     <div class="well">

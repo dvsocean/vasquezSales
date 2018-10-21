@@ -14,9 +14,8 @@ $user = Auth::user();
 $fpc = \App\FrontPageContent::find(1);
 ?>
 
-
-@if($signedIn)
-        <!DOCTYPE HTML>
+@if($signedIn && $user->admin)
+<!DOCTYPE HTML>
 <html>
 <title>Edit quad content</title>
 <!--HEADER-->

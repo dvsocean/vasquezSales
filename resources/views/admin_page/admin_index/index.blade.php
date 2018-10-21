@@ -6,6 +6,14 @@
  * Time: 6:23 PM
  */
 -->
+<?php
+use Illuminate\Support\Facades\Auth;
+
+$signedIn = Auth::check();
+$user = Auth::user();
+?>
+
+@if($signedIn && $user->admin)
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,12 +58,7 @@
 </head>
 <body>
 
-<?php
-use Illuminate\Support\Facades\Auth;
 
-$signedIn = Auth::check();
-$user = Auth::user();
-?>
 
 <div id="wrapper">
 
@@ -173,7 +176,7 @@ $user = Auth::user();
                         <a href="#" class="active side_nav"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="{{route('editSliders')}}" class="side_nav"><i class="fa fa-camera-retro fa-fw"></i> Slides</a>
+                        <a href="{{route('editSliders')}}" class="side_nav"><i class="fa fa-camera-retro fa-fw"></i> Slideshow</a>
                     </li>
                     <li>
                         <a href="{{route('front_page_content')}}" class="side_nav"><i class="fa fa-desktop fa-fw"></i> Front page content</a>
@@ -185,7 +188,10 @@ $user = Auth::user();
                         <a href="{{route('editButtons')}}" class="side_nav"><i class="fa fa-home fa-fw"></i> Home buttons/icons</a>
                     </li>
                     <li>
-                        <a href="#" class="side_nav"><i class="fa fa-user fa-fw"></i> Profile buttons</a>
+                        <a href="{{route('editProfilePage')}}" class="side_nav"><i class="fa fa-user fa-fw"></i> Profile buttons</a>
+                    </li>
+                    <li>
+                        <a href="" class="side_nav"><i class="fa fa-unlock fa-fw"></i> Permissions</a>
                     </li>
                 </ul>
             </div>
@@ -390,3 +396,7 @@ $user = Auth::user();
 
 </body>
 </html>
+@else
+    @include('includes.error_page.index')
+@endif
+

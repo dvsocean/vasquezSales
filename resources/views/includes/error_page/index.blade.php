@@ -12,6 +12,6 @@
 </head>
 
 <body>
-    <h1>You are not logged in</h1>
+    <h1>You are not logged in, or you are not properly authorized</h1>
 </body>
 </html>

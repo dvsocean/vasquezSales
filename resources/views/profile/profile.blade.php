@@ -41,27 +41,71 @@ $user = Auth::user();
                 </div>
             </div>
 
-            <br><br>
-
+            @if($signedIn && $user->admin)
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
                     <!--PLACEHOLDER-->
                 </div>
 
-                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                    <!--PLACEHOLDER-->
+                <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
+                    <button id="home_page_button" class="btn btn-default">HOME</button>
+                    <script>
+                        $('#home_page_button').click(function () {
+                            document.location = "/";
+                        });
+                    </script>
                 </div>
 
-                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                    @if($signedIn && $user->admin)
-                        <button class="btn btn-default">Dashboard</button>
-                    @endif
+                <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
+                    <button id="back_to_dashboard" class="btn btn-default">CTRL</button>
+                    <script>
+                        $('#back_to_dashboard').click(function () {
+                            document.location = "/admin";
+                        });
+                    </script>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
+                    <button id="slideshow_button" class="btn btn-default">SLDS</button>
+                    <script>
+                        $('#slideshow_button').click(function () {
+                            document.location = "/editSliders";
+                        });
+                    </script>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
+                    <button id="fpc" class="btn btn-default">FRPC</button>
+                    <script>
+                        $('#fpc').click(function () {
+                            document.location = "/frontPageContent";
+                        });
+                    </script>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
+                    <button id="quad_content" class="btn btn-default">QCNT</button>
+                    <script>
+                        $('#quad_content').click(function () {
+                            document.location = "/quad_content";
+                        });
+                    </script>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
+                    <button id="home_buttons_icons" class="btn btn-default">BTIC</button>
+                    <script>
+                        $('#home_buttons_icons').click(function () {
+                            document.location = "/editButtons";
+                        });
+                    </script>
                 </div>
 
                 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
                     <!--PLACEHOLDER-->
                 </div>
             </div>
+            @endif
         </div>
 
         <div class="container">

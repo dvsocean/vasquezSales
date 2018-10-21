@@ -80,6 +80,8 @@ Route::get('/cat_button_four', function(){
     return view('home_page_categories.cat_four');
 });
 
+
+
 //Multiple routes for Bicons route
 Route::post('/updateBicons', 'BiconController@update');
 
@@ -88,3 +90,7 @@ Route::post('/quads', 'QuadController@updateQuadIcons');
 
 //update montior images
 Route::post('/monitors', 'MonitorController@updateMonitors');
+
+
+//profile page content
+Route::get('/editProfilePage', 'ProfileController@showPage')->name('editProfilePage');
