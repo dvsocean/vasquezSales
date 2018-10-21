@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\FrontpageBicons;
+use App\Http\Requests\ButtonTextPost;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
 class BiconController extends Controller
 {
-    public function update(Request $request){
+    public function update(ButtonTextPost $request){
         if(FrontpageBicons::find(1)){
             $bicons = FrontpageBicons::find(1);
         } else {
@@ -48,7 +49,8 @@ class BiconController extends Controller
         $bicons = FrontpageBicons::find(1);
         $flag = true;
         if($bicons->cat_button_one == $data->category_button_one && $bicons->cat_button_two == $data->category_button_two
-        && $bicons->cat_button_three == $data->category_button_three && $bicons->cat_button_four == $data->category_button_four){
+        && $bicons->cat_button_three == $data->category_button_three && $bicons->cat_button_four == $data->category_button_four
+        && $bicons->footer_button == $data->footer_button){
             $flag = false;
         }
         return $flag;

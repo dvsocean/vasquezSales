@@ -8,6 +8,7 @@
 -->
 @if (count($errors) > 0)
     <div class="alert alert-danger">
+        <!-- FRONT PAGE CONTENT VALIDATION -->
         @if($errors->has('heading_one'))
             <p>Heading 1 must contains at least 3 characters</p>
         @endif
@@ -32,6 +33,7 @@
             <p>Body 3 must contain at least 10 characters</p>
         @endif
 
+            <!-- QUAD CONTENT ERRORS -->
             @if($errors->has('quad_title'))
                 <p>The title must contain at least 3 characters</p>
             @endif
@@ -71,5 +73,26 @@
             @if($errors->has('footer_title'))
                 <p>The footer title must contain at least 3 characters</p>
             @endif
+
+        <!-- FRONT PAGE BUTTON TEXT VALIDATION -->
+        @if($errors->has('category_button_one'))
+            <p>The first button is required to have text</p>
+        @endif
+
+        @if($errors->has('category_button_two'))
+            <p>The second button is required to have text</p>
+        @endif
+
+        @if($errors->has('category_button_three'))
+            <p>The third button is required to have text</p>
+        @endif
+
+        @if($errors->has('category_button_four'))
+            <p>The fourth button is required to have text</p>
+        @endif
+
+        @if($errors->has('footer_button'))
+            <p>The footer button is required to have text</p>
+        @endif
     </div>
 @endif
