@@ -34,8 +34,6 @@ $user = Auth::user();
     <!-- Wrapper -->
     <div id="wrapper">
         <div class="container">
-            <form action="/updateProfile" method="POST" enctype="multipart/form-data">
-                {{ csrf_field() }}
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     @include('includes.info_message_flash_bar.index')
@@ -45,6 +43,30 @@ $user = Auth::user();
 
             <br><br>
 
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <!--PLACEHOLDER-->
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <!--PLACEHOLDER-->
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    @if($signedIn && $user->admin)
+                        <button class="btn btn-default">Dashboard</button>
+                    @endif
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <!--PLACEHOLDER-->
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <form action="/updateProfile" method="POST" enctype="multipart/form-data">
+                {{ csrf_field() }}
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
                     <!--PLACEHOLDER-->
@@ -95,8 +117,8 @@ $user = Auth::user();
                         Express your attitude and lets us know what your looking for.
                         If need be, we can blow a nigga out his fuckin clothes, and we
                         can help you locate the rig that suites you and your needs. We
-                        also know the secrets to obtaining the funds and making your
-                        desires a reality..a 12 gauge might help us out.
+                        also know the secrets to obtaining funds and making your
+                        desires a reality..a 12 gauge usually helps us out.
                     </p>
                 </div>
 
@@ -133,6 +155,9 @@ $user = Auth::user();
                         Why? Because we know that starting a business can be a maze so let us
                         lead you through it since we've done it before. We also know how to blow
                         up cars. Plus, we support single moms :)
+                        <br><br>
+                        This text was me having a good time (assuming it will NOT end up in production).
+                        But the overall layout of the profile page needs to be directed by you guys.
                     </p>
                 </div>
             </div>
