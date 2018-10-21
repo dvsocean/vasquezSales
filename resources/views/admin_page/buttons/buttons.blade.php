@@ -35,6 +35,23 @@ $monitor = \App\MonitorImages::find(1);
     <br>
 
     <div class="container">
+
+        <div class="row">
+            <div class="col-xsm-12 col-sm-12 col-md-2 col-lg-2">
+                <br>
+                <a href="{{route('homePage')}}" class="btn btn-default">Home</a>
+                <span> </span>
+                <a href="{{route('admin')}}" class="btn btn-default">Dashboard</a>
+                <br><br>
+            </div>
+
+            <div class="col-xsm-12 col-sm-12 col-md-10 col-lg-10 text-center">
+                <!-- ERRORS ARRAY -->
+                @include('includes.info_message_flash_bar.errors_array')
+                <!-- ERRORS ARRAY -->
+            </div>
+        </div>
+
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                 <h3>Home page buttons:</h3>
@@ -75,19 +92,19 @@ $monitor = \App\MonitorImages::find(1);
                     {{ csrf_field() }}
                     <div class="well">
                         <label>Monitor image 1:</label>
-                        <img src="{{!empty($monitor->image_one) ? 'monitor_images/' . $monitor->image_one : 'monitor_images/default/performance.png'}}" height="100" width="100">
+                        <img src="{{!empty($monitor->image_one) ? 'monitor_images/' . $monitor->image_one : 'PLACEHOLDERS/monitor_images/performance.png'}}" height="100" width="100">
                         <input type="file" name="monitor_image_one"/>
 
                         <br><br><br>
 
                         <label>Monitor image 2:</label>
-                        <img src="{{!empty($monitor->image_two) ? 'monitor_images/' . $monitor->image_two : 'monitor_images/default/dollar.png'}}" height="100" width="100">
+                        <img src="{{!empty($monitor->image_two) ? 'monitor_images/' . $monitor->image_two : 'PLACEHOLDERS/monitor_images/dollar.png'}}" height="100" width="100">
                         <input type="file" name="monitor_image_two"/>
 
                         <br><br><br>
 
                         <label>Monitor image 3:</label>
-                        <img src="{{!empty($monitor->image_three) ? 'monitor_images/' . $monitor->image_three : 'monitor_images/default/repair.png'}}" height="100" width="100">
+                        <img src="{{!empty($monitor->image_three) ? 'monitor_images/' . $monitor->image_three : 'PLACEHOLDERS/monitor_images/repair.png'}}" height="100" width="100">
                         <input type="file" name="monitor_image_three"/>
                     </div>
                     <input type="submit" name="submit" value="update" class="form-control">
