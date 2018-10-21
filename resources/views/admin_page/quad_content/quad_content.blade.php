@@ -38,6 +38,22 @@ $fpc = \App\FrontPageContent::find(1);
         <form action="/updateQuads" method="POST">
             {{ csrf_field() }}
 
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+                    <br>
+                    <a href="{{route('homePage')}}" class="btn btn-default">Home</a>
+                    <span> </span>
+                    <a href="{{route('admin')}}" class="btn btn-default">Dashboard</a>
+                    <br>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 text-center">
+                    <!-- ERROR ARRAY -->
+                    @include('includes.info_message_flash_bar.errors_array')
+                    <!-- ERROR ARRAY -->
+                </div>
+            </div>
+
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
                 <!--PLACEHOLDER-->

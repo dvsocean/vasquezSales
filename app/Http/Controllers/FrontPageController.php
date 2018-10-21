@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\FrontPageContent;
 use App\Http\Requests\FrontPageContentPost;
+use App\Http\Requests\QuadContentPost;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -32,7 +33,7 @@ class FrontPageController extends Controller
         return view('admin_page.admin_index.index');
     }
 
-    public function updateQuadContent(Request $request){
+    public function updateQuadContent(QuadContentPost $request){
         $fpc = FrontPageContent::find(1);
         if(!$this->isQuadContentModified($request)){
             Session::flash('message', 'No modifications to quads were made');
