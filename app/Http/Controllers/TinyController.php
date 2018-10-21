@@ -27,7 +27,7 @@ class TinyController extends Controller
         $file2 = $request->file('tinyTwo');
         $file3 = $request->file('tinyThree');
 
-        if(is_file($file1) || is_file($file2) || is_file($file3)){
+        if(is_file($file1) && is_file($file2) && is_file($file3)){
 
             if ($request->hasFile('tinyOne')) {
                 if($file1->getClientOriginalExtension() == 'jpg' || $file1->getClientOriginalExtension() == 'JPEG'
