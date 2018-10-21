@@ -128,6 +128,9 @@ $user = Auth::user();
                     <label>Name:</label>
                     <input type="text" name="name" value="{{$user->name}}" class="form-control">
                     <br>
+                    <label>City:</label>
+                    <input type="text" name="city" value="{{$user->city}}" class="form-control">
+                    <br>
                     <label>Email:</label>
                     <input type="text" name="email" value="{{$user->email}}" class="form-control">
                     <br>

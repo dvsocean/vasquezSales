@@ -10,25 +10,41 @@ use Illuminate\Support\Facades\Session;
 class MemberController extends Controller
 {
     public function update(Request $request){
-        $user= User::findOrFail($request->id);
-        $input['telephone'] = $request->telephone;
+        $user= User::find($request->id);
 
-        if ($request->hasFile('profilePhoto')) {
-            $file= $request->file('profilePhoto');
-            if ($user->photo_id) {
-                if (file_exists('member_images/' . $user->photo->file)) {
-                    unlink('member_images/' . $user->photo->file);
-                    $user->photo->delete($user->photo_id);
+        $user->telephone = $request->telephone;
+        $user->city = $request->city;
+
+        $avatar = $request->file('profilePhoto');
+
+        if(!empty($avatar)){
+            if(is_file($avatar)){
+                if ($request->hasFile('profilePhoto')) {
+                    if($avatar->getClientOriginalExtension() == 'jpg' || $avatar->getClientOriginalExtension() == 'JPG'
+                        || $avatar->getClientOriginalExtension() == 'jpeg' || $avatar->getClientOriginalExtension() == 'JPEG'
+                        || $avatar->getClientOriginalExtension() == 'png' || $avatar->getClientOriginalExtension() == 'PNG'){
+                        $file= $request->file('profilePhoto');
+                        if ($user->photo_id) {
+                            if (file_exists('member_images/' . $user->photo->file)) {
+                                unlink('member_images/' . $user->photo->file);
+                                $user->photo->delete($user->photo_id);
+                            }
+                        }
+                        $name= time() . $file->getClientOriginalName();
+                        $file->move('member_images/', $name);
+                        $photo= Photo::create(['file'=>$name, 'user_id'=>$request->id]);
+                        $user->photo_id = $photo->id;
+                        Session::flash('message', 'Your avatar has been updated');
+                    } else {
+                        Session::flash('error_message', 'Only the JPEG and PNG file format is allowed');
+                    }
                 }
+            } else {
+                Session::flash('error_message', 'NOT AN ACCEPTABLE IMAGE FILE! PLEASE CHOOSE AGAIN');
             }
-            $name= time() . $file->getClientOriginalName();
-            $file->move('member_images/', $name);
-            $photo= Photo::create(['file'=>$name, 'user_id'=>$request->id]);
-            $input['photo_id']= $photo->id;
         }
 
-        $user->update($input);
-        Session::flash('message', ''. ucfirst($user->name) .'s profile has been updated');
+        $user->save();
         return redirect('/profile');
     }
 }

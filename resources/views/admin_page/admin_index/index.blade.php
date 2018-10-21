@@ -191,7 +191,7 @@ $user = Auth::user();
                         <a href="{{route('editProfilePage')}}" class="side_nav"><i class="fa fa-user fa-fw"></i> Profile buttons</a>
                     </li>
                     <li>
-                        <a href="" class="side_nav"><i class="fa fa-unlock fa-fw"></i> Permissions</a>
+                        <a href="{{route('permissions')}}" class="side_nav"><i class="fa fa-unlock fa-fw"></i> Permissions</a>
                     </li>
                 </ul>
             </div>

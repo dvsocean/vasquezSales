@@ -94,3 +94,5 @@ Route::post('/monitors', 'MonitorController@updateMonitors');
 
 //profile page content
 Route::get('/editProfilePage', 'ProfileController@showPage')->name('editProfilePage');
+//permissions
+Route::get('/permissions', 'PermissionsController@showPerms')->name('permissions');
