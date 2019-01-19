@@ -18,7 +18,7 @@ $fpc = \App\FrontPageContent::find(1);
 @if($signedIn)
         <!DOCTYPE HTML>
 <html>
-<title>Administrator</title>
+<title>Edit quad content</title>
 <!--HEADER-->
 @include('includes.header_footer.header')
 <!--HEADER-->
@@ -38,15 +38,31 @@ $fpc = \App\FrontPageContent::find(1);
         <form action="/updateQuads" method="POST">
             {{ csrf_field() }}
 
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+                    <br>
+                    <a href="{{route('homePage')}}" class="btn btn-default">Home</a>
+                    <span> </span>
+                    <a href="{{route('admin')}}" class="btn btn-default">Dashboard</a>
+                    <br>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 text-center">
+                    <!-- ERROR ARRAY -->
+                    @include('includes.info_message_flash_bar.errors_array')
+                    <!-- ERROR ARRAY -->
+                </div>
+            </div>
+
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
                 <!--PLACEHOLDER-->
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                {{--<label>Quad title:</label>--}}
-                {{--<input class="form-control" type="text" name="quad_title" placeholder="Enter title" value="{{$fpc->quad_title}}"/><br>--}}
-                {{--<br><br>--}}
+                <label>Quad title:</label>
+                <input class="form-control" type="text" name="quad_title" value="{{!empty($fpc->quad_title) ? $fpc->quad_title : 'REPLACE THIS TEXT'}}"/><br>
+                <br><br>
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
