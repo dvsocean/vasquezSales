@@ -96,3 +96,9 @@ Route::post('/monitors', 'MonitorController@updateMonitors');
 Route::get('/editProfilePage', 'ProfileController@showPage')->name('editProfilePage');
 //permissions
 Route::get('/permissions', 'PermissionsController@showPerms')->name('permissions');
+
+//routes for sales page
+Route::get('/salesPage', 'SalesController@index')->name('salesPage');
+
+//routes for parts and repairs
+Route::get('/partsAndRepairs', 'PartsAndRepairsController@index')->name('partsAndRepairs');

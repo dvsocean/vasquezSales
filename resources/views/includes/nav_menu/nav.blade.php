@@ -53,10 +53,10 @@
                 <a href="{{route('profile')}}">{{$user->name}}'s Profile</a>
             </li>
             <li>
-                <a href="#">Performance</a>
+                <a href="{{route('salesPage')}}">Sales</a>
             </li>
             <li>
-                <a href="#">Parts</a>
+                <a href="{{route('partsAndRepairs')}}">Parts/Repairs</a>
             </li>
             <li>
                 <a href="#">Services</a>
