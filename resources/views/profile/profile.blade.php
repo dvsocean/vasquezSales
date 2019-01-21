@@ -149,67 +149,47 @@ $user = Auth::user();
 
         <!--SECTION 2-->
         <div class="container">
-            {{--<form action="/desired" method="POST">--}}
-                {{--<input type="hidden" value="{{$user->id}}" name="user_id">--}}
-                {{--{{ csrf_field() }}--}}
-            {{--<div class="row">--}}
-                {{--<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">--}}
-                    {{--<h2 class="text-center">Desired equipment</h2>--}}
-                {{--</div>--}}
-            {{--</div>--}}
+            <div class="row">
+                <div class="col-xs-10 col-sm-10 col-md-4 col-lg-4">
+                    <h2 class="text-center">Add posting</h2>
 
-            {{--<div class="row">--}}
-                {{--<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">--}}
-                    {{--<p>--}}
-                        {{--Express your attitude and lets us know what your looking for.--}}
-                        {{--If need be.--}}
-                        {{--Express your attitude and lets us know what your looking for.--}}
-                        {{--If need be.--}}
-                        {{--Express your attitude and lets us know what your looking for.--}}
-                        {{--If need be.--}}
-                    {{--</p>--}}
-                {{--</div>--}}
+                    <form action="" method="" enctype="">
+                        {{--dropdown--}}
+                        <label>Item</label>
+                        <div class="select-wrapper">
+                            <select>
+                                <option value="truck">Truck</option>
+                                <option value="trailer">Trailer</option>
+                                <option value="part">Part</option>
+                                <option value="tool">Tool</option>
+                                <option value="service">Service</option>
+                            </select>
+                        </div>
 
-                {{--<div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">--}}
-                    {{--<label>Hardware:</label>--}}
-                    {{--<input type="text" name="hardware" value="" placeholder="Make/model"/>--}}
-                    {{--<br>--}}
-                    {{--<label>Year:</label>--}}
-                    {{--<input type="text" name="year" placeholder="Year"/>--}}
-                {{--</div>--}}
+                        <br>
+                        <label>Description</label>
+                        <input type="text" class="form-control">
 
-                {{--<div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">--}}
-                    {{--<label>Engine:</label>--}}
-                    {{--<input type="text" name="engine" placeholder="Engine"/>--}}
-                    {{--<br>--}}
-                    {{--<label>Transmission:</label>--}}
-                    {{--<input type="text" name="transmission" placeholder="Transmission"/>--}}
-                {{--</div>--}}
+                        <br>
+                        <label>Availablity</label>
+                        <input type="text" class="form-control">
+                    </form>
+                </div>
 
-                {{--<div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">--}}
-                    {{--<label>Accessories:</label>--}}
-                    {{--<input type="text" name="extras" placeholder="Extras"/>--}}
-                    {{--<br>--}}
-                    {{--<label>Budget:</label>--}}
-                    {{--<input type="text" name="budget" placeholder="$ Amount"/>--}}
+                <div class="col-xs-10 col-sm-10 col-md-4 col-lg-4">
+                    <h2 class="text-center">Add image</h2>
+                </div>
 
-                    {{--<br><br>--}}
+                <div class="col-xs-10 col-sm-10 col-md-4 col-lg-4">
+                    <h2 class="text-center">Additionals</h2>
+                </div>
+            </div>
 
-                    {{--<input type="submit" value="Update" name="vasquez" class="form-control">--}}
-                {{--</div>--}}
-
-                {{--<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">--}}
-                    {{--<p>--}}
-                        {{--Why? Because we know that starting a business can be a maze so let us--}}
-                        {{--lead you through it since we've done it before. We also know how to blow--}}
-                        {{--up cars. Plus, we support single moms :)--}}
-                        {{--<br><br>--}}
-                        {{--This text was me having a good time (assuming it will NOT end up in production).--}}
-                        {{--But the overall layout of the profile page needs to be directed by you guys.--}}
-                    {{--</p>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-            {{--</form>--}}
+            <div class="row">
+                <div class="col-xs-10 col-sm-10 col-md-12 col-lg-12 align-right">
+                    <input type="submit" value="Post">
+                </div>
+            </div>
         </div>
 
         <br>
