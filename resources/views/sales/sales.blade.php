@@ -47,7 +47,8 @@ $user = Auth::user();
 
                     <p>
                         Was thinking to make this page an overview page that would display all postings.
-                        This would give the client an ability to make a selection on what to view.
+                        This would give the user an ability to make a selection on what to view. Obviously
+                        this table would be fed from a database providing more postings.
                     </p>
 
                     <div class="container">
