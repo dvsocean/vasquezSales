@@ -17,10 +17,13 @@
     <script src="{{asset('assets/js/jquery-2.1.4.min.js')}}"></script>
     <script src="{{asset('assets/js/tinyslide.js')}}"></script>
     <script src="{{asset('assets/bootstrap/js/bootstrap.js')}}"></script>
+    <script src="{{asset('assets/dropzone/dropzone.js')}}"></script>
     <link rel="stylesheet" href="{{asset('assets/bootstrap/css/bootstrap.css')}}"/>
     <link rel="stylesheet" href="{{asset('assets/css/profile.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/tinyslide.css')}}"/>
     <link rel="stylesheet" href="{{asset('assets/css/customButtonStyles.css')}}"/>
+    <link rel="stylesheet" href="{{asset('assets/dropzone/dropzone.css')}}"/>
+
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">

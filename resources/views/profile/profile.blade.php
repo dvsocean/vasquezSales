@@ -151,42 +151,68 @@ $user = Auth::user();
         <div class="container">
             <div class="row">
                 <div class="col-xs-10 col-sm-10 col-md-4 col-lg-4">
-                    <h2 class="text-center">Add posting</h2>
+                    <h2 class="text-center">Add details</h2>
+
+
+
 
                     <form action="" method="" enctype="">
-                        {{--dropdown--}}
                         <label>Item</label>
                         <div class="select-wrapper">
-                            <select>
+                            <select id="typeSelector" name="typeSelector">
+                                <option value="na" selected>Select a type</option>
                                 <option value="truck">Truck</option>
                                 <option value="trailer">Trailer</option>
                                 <option value="part">Part</option>
                                 <option value="tool">Tool</option>
                                 <option value="service">Service</option>
+
+                                <script>
+                                    $(function(){
+                                        $('#typeSelector').change(function () {
+                                            var type = $('#typeSelector').val();
+
+                                            if(type === 'truck'){
+                                                $('#nodeType').html("<h2 class='text-center'>Describe your truck</h2><br>" +
+                                                    "<label>Truck make</label>" +
+                                                    "<input type='text' name='truckMake' placeholder='Truck Make'>" +
+                                                    "<br>" +
+                                                    "<label>Year</label>" +
+                                                    "<input type='text' name='truckYear' placeholder='Year'>");
+                                            } else if(type === 'trailer') {
+                                                $('#nodeType').html("<h2 class='text-center'>Describe your trailer</h2><br>" +
+                                                    "<label>Trailer make</label>" +
+                                                    "<input type='text' name='trailerMake' placeholder='Trailer Make'>" +
+                                                    "<br>" +
+                                                    "<label>Year</label>" +
+                                                    "<input type='text' name='trailerYear' placeholder='Year'>");
+                                            }
+                                        });
+                                    });
+                                </script>
                             </select>
                         </div>
 
-                        <br>
-                        <label>Description</label>
-                        <input type="text" class="form-control">
+
+
 
                         <br>
-                        <label>Availablity</label>
-                        <input type="text" class="form-control">
+                        <div id="nodeType"></div>
+
                     </form>
                 </div>
 
-                <div class="col-xs-10 col-sm-10 col-md-4 col-lg-4">
-                    <h2 class="text-center">Add image</h2>
-                </div>
+                <div class="col-xs-10 col-sm-10 col-md-8 col-lg-8">
+                    <h2 class="text-center">Add images</h2>
+                    <br>
+                    <form action="/file-upload" class="dropzone" id="my-awesome-dropzone" enctype="multipart/form-data">
 
-                <div class="col-xs-10 col-sm-10 col-md-4 col-lg-4">
-                    <h2 class="text-center">Additionals</h2>
+                    </form>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-xs-10 col-sm-10 col-md-12 col-lg-12 align-right">
+                <div class="col-xs-10 col-sm-10 col-md-12 col-lg-12">
                     <input type="submit" value="Post">
                 </div>
             </div>
